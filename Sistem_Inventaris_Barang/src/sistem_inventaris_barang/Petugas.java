@@ -10,5 +10,15 @@ package sistem_inventaris_barang;
  * @author Farid Kiftirul Aziz
  */
 public class Petugas {
+    private int idPetugas;
+
+    public int getIdPetugas() {
+        return idPetugas;
+    }
+
+    public void setIdPetugas(int idPetugas) {
+        this.idPetugas = idPetugas;
+    }
+    
     
 }

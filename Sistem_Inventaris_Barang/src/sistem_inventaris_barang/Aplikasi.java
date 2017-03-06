@@ -10,5 +10,8 @@ package sistem_inventaris_barang;
  * @author Farid Kiftirul Aziz
  */
 public class Aplikasi {
+    private Penyedia[] daftarPenyedia;
+    private Petugas[] daftarPetugas;
+    private Gudang[] daftarGudang;
     
 }

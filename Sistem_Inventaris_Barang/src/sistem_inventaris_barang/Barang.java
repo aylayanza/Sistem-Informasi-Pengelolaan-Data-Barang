@@ -13,7 +13,8 @@ public class Barang {
     private String NamaBarang;
     private String ID_Barang;
     private int jumlahBarang;
-    private int tanggal_pembelian;
+    private double harga;
+    private int stock;
 
     public String getNamaBarang() {
         return NamaBarang;
@@ -39,13 +40,20 @@ public class Barang {
         this.jumlahBarang = jumlahBarang;
     }
 
-    public int getTanggal_pembelian() {
-        return tanggal_pembelian;
+    public double getHarga() {
+        return harga;
     }
 
-    public void setTanggal_pembelian(int tanggal_pembelian) {
-        this.tanggal_pembelian = tanggal_pembelian;
+    public void setHarga(double harga) {
+        this.harga = harga;
     }
-    
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
     
 }
