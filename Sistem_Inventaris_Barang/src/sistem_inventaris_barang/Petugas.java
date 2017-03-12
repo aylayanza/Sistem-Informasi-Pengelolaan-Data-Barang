@@ -9,6 +9,21 @@ package sistem_inventaris_barang;
  *
  * @author Farid Kiftirul Aziz
  */
-public class Petugas {
+public class Petugas extends Orang {
+    private String idPetugas;
+    
+    public Petugas(String nama, String alamat, String idPetugas){
+        super(nama,alamat);
+        this.idPetugas = idPetugas;
+    }
+
+    public String getIdPetugas() {
+        return idPetugas;
+    }
+
+    public void setIdPetugas(String idPetugas) {
+        this.idPetugas = idPetugas;
+    }
+    
     
 }

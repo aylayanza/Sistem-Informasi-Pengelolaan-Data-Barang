@@ -18,4 +18,6 @@ public class Sistem_Inventaris_Barang {
         // TODO code application logic here
     }
     
+    //BELUM TAU ISI MAIN NYA APA, KAN CLASS DIAGRAM DULU
+    
 }

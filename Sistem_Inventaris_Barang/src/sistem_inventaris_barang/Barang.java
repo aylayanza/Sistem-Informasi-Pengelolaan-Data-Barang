@@ -12,8 +12,18 @@ package sistem_inventaris_barang;
 public class Barang {
     private String NamaBarang;
     private String ID_Barang;
-    private int jumlahBarang;
-    private int tanggal_pembelian;
+    private int stokBarang;
+    private String tanggal_pembelian;
+    private double hargaBarang;
+    
+    public Barang(String nama, String idBarang, int jmlBarang, String tgl, double harga){
+        this.NamaBarang = nama;
+        this.ID_Barang = idBarang;
+        this.stokBarang = jmlBarang;
+        this.tanggal_pembelian = tgl;
+        this.hargaBarang = harga;
+    }
+    
 
     public String getNamaBarang() {
         return NamaBarang;
@@ -31,21 +41,28 @@ public class Barang {
         this.ID_Barang = ID_Barang;
     }
 
-    public int getJumlahBarang() {
-        return jumlahBarang;
+    public int getStokBarang() {
+        return stokBarang;
     }
 
-    public void setJumlahBarang(int jumlahBarang) {
-        this.jumlahBarang = jumlahBarang;
+    public void setStokBarang(int stokBarang) {
+        this.stokBarang = stokBarang;
     }
 
-    public int getTanggal_pembelian() {
+    public String getTanggal_pembelian() {
         return tanggal_pembelian;
     }
 
-    public void setTanggal_pembelian(int tanggal_pembelian) {
+    public void setTanggal_pembelian(String tanggal_pembelian) {
         this.tanggal_pembelian = tanggal_pembelian;
     }
-    
-    
+
+    public double getHargaBarang() {
+        return hargaBarang;
+    }
+
+    public void setHargaBarang(double hargaBarang) {
+        this.hargaBarang = hargaBarang;
+    }
+
 }
