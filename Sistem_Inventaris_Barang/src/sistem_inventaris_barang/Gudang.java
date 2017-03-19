@@ -13,6 +13,16 @@ public class Gudang {
     private Barang[] daftarBarang;
     private int jmlBarang;
     private String idGudang;
+    private String Lokasi;
+
+    public String getLokasi() {
+        return Lokasi;
+    }
+
+    public void setLokasi(String Lokasi) {
+        this.Lokasi = Lokasi;
+    }
+    
     
     public Gudang(String id){
         this.idGudang = id;
