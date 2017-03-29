@@ -9,15 +9,16 @@ package sistem_inventaris_barang;
  *
  * @author Farid Kiftirul Aziz
  */
-public class Orang {
+public abstract class Orang {
     private String nama;
     private String alamat;
+    protected String noHP;
     
     public Orang(String nama, String alamat){
         this.nama = nama;
         this.alamat = alamat;
     }
-
+    
     public String getNama() {
         return nama;
     }
@@ -33,6 +34,9 @@ public class Orang {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
+
+    public abstract String getNoHP();
+    public abstract void setNoHP(String noHP);
     
     
 }

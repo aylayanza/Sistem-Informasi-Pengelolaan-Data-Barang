@@ -24,6 +24,16 @@ public class Petugas extends Orang {
     public void setIdPetugas(String idPetugas) {
         this.idPetugas = idPetugas;
     }
+
+    @Override
+    public String getNoHP() {
+        return super.noHP;
+    }
+
+    @Override
+    public void setNoHP(String noHP) {
+        super.noHP = noHP;
+    }
     
     
 }

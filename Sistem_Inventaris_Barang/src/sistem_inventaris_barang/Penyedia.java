@@ -5,21 +5,23 @@
  */
 package sistem_inventaris_barang;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Farid Kiftirul Aziz
  */
 public class Penyedia extends Orang {
+
     private String idPenyedia;
-    private Barang[] daftarBarang;
+    private ArrayList<Barang> daftarBarang;
     private int jmlBarang;
-    
-    
-    public Penyedia(String nama, String alamat, String idPenyedia){
-        super(nama,alamat);
+
+    public Penyedia(String nama, String alamat, String idPenyedia) {
+        super(nama, alamat);
         this.idPenyedia = idPenyedia;
     }
-    
+
     public String getIdPenyedia() {
         return idPenyedia;
     }
@@ -35,16 +37,40 @@ public class Penyedia extends Orang {
     public void setJmlBarang(int jmlBarang) {
         this.jmlBarang = jmlBarang;
     }
+
+    public void createBarang(String nama, String idBarang, int jmlBarang, String tgl, double harga) {
+        Barang b = new Barang(nama, idBarang, jmlBarang, tgl, harga);
+        daftarBarang.add(b);
+    }
+
+//    public void addBarang(Barang newBarang){
+//        if(jmlBarang < daftarBarang.length){
+//            daftarBarang[jmlBarang] = newBarang;
+//        }
+//        jmlBarang++;
+//    }
     
-    public void addBarang(Barang newBarang){
-        if(jmlBarang < daftarBarang.length){
-            daftarBarang[jmlBarang] = newBarang;
+    public Barang getDaftarBarang(int newDaftarBarang) {
+        return daftarBarang.get(jmlBarang);
+    }
+
+    @Override
+    public String getNoHP() {
+        return super.noHP;
+    }
+
+    @Override
+    public void setNoHP(String noHP) {
+        super.noHP = noHP;
+    }
+
+    public void removeBarang(String id) {
+        for (int i = 0; i < jmlBarang; i++) {
+            if (daftarBarang.get(i).getID_Barang().equals(id)) {
+                daftarBarang.remove(i);
+                break;
+            }
         }
-        jmlBarang++;
     }
-    
-    public Barang getDaftarBarang(int newDaftarBarang){
-        return daftarBarang[newDaftarBarang];
-    }
-    
+
 }

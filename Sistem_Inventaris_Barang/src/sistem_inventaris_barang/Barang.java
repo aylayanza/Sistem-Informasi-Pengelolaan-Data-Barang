@@ -64,5 +64,6 @@ public class Barang {
     public void setHargaBarang(double hargaBarang) {
         this.hargaBarang = hargaBarang;
     }
-
+    
+   
 }

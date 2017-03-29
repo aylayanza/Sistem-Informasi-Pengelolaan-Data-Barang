@@ -5,34 +5,43 @@
  */
 package sistem_inventaris_barang;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Farid Kiftirul Aziz
  */
 public class Aplikasi {
-    private Penyedia[] daftarPenyedia;
-    private Petugas[] daftarPetugas;
-    private Gudang[] daftarGudang;
+
+    private ArrayList<Penyedia> daftarPenyedia = new ArrayList<>();
+    private ArrayList<Petugas> daftarPetugas = new ArrayList<>();
+    private ArrayList<Gudang> daftarGudang = new ArrayList<>();
     private int jmlPenyedia;
     private int jmlPetugas;
     private int jmlGudang;
-   
-    
-    public void addPenyedia(Penyedia p){
-        if(jmlPenyedia < daftarPenyedia.length){
-            this.daftarPenyedia[jmlPenyedia] = p;
+
+    public void addPenyedia(Penyedia p) {
+        if (jmlPenyedia < daftarPenyedia.size()) {
+            this.daftarPenyedia.add(p);
         }
         this.jmlPenyedia++;
     }
-    
-    public void addPetugas(Petugas q){
-        if(jmlPetugas < daftarPetugas.length){
-            this.daftarPetugas[jmlPetugas] = q;
+
+    public void addPetugas(Petugas q) {
+        if (jmlPetugas < daftarPetugas.size()) {
+            this.daftarPetugas.add(q);
         }
         this.jmlPetugas++;
     }
-    
-//    public Petugas getPetugas(String id){
-//        
-//    } bingung isi nya apa, kalo di return Petugas gabisa karna di dalam class ini gak ada petugas
+
+    public Petugas getPetugas(String id) {
+        Petugas p = null;
+        for (int i = 0; i < jmlPetugas; i++) {
+            if (daftarPetugas.get(i).getIdPetugas().equals(id)) {
+                p = daftarPetugas.get(i);
+                break;
+            }
+        }
+        return p;
+    }
 }
