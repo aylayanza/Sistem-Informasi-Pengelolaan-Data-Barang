@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Kukuh Rahingga P
+ * 
  */
 public class Console {
 

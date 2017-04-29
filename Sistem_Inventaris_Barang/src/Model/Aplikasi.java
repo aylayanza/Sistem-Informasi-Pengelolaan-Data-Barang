@@ -30,18 +30,19 @@ public class Aplikasi {
         daftarPenyedia = new ArrayList();
         daftarGudang = new ArrayList();
         daftarPetugas = new ArrayList();
-        daftarBarang = new ArrayList();
+
     }
 
     private ArrayList<Penyedia> daftarPenyedia = new ArrayList<>();
     private ArrayList<Petugas> daftarPetugas = new ArrayList<>();
     private ArrayList<Gudang> daftarGudang = new ArrayList<>();
     private ArrayList<Barang> daftarBarang = new ArrayList<>();
+    private FileIO save;
     private int jmlPenyedia;
     private int jmlPetugas;
     private int jmlGudang;
     private int jmlBarang;
-    private FileIO save;
+   
 
     public void addPenyedia(Penyedia p) {
         if (jmlPenyedia < daftarPenyedia.size()) {
