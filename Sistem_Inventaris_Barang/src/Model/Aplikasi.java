@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.List;
 
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -118,6 +119,26 @@ public class Aplikasi {
                 break;
             }
         }
+    }
+    
+    //Login Penyedia
+     public boolean LoginPenyedia(String Username, String Password) {
+        for (Penyedia pny : daftarPenyedia){
+            if(pny.getUsername().equals(Username) && pny.getPassword().equals(Password)) {
+                return true;               
+            }
+        }
+        return false;
+    }
+     
+     //Login Petugas
+      public boolean loginPetugas(String Username, String Password) {
+        for (Petugas ptg : daftarPetugas){
+            if(ptg.getUsername().equals(Username) && ptg.getPassword().equals(Password)) {
+                return true;               
+            }
+        }
+        return false;
     }
 
 //    public void createBarang(String nama, String idBarang, int jmlBarang, String tgl, double harga) {

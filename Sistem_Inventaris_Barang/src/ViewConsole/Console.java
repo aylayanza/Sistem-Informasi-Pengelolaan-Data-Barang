@@ -261,7 +261,7 @@ public class Console {
                         String tanggal_pembelian = IStr.nextLine();
                         System.out.print(" Harga                : ");
                         double hargaBarang = inputInteger();
-
+                       
                         break;
                     case 2:
                         System.out.println("----Stock Barang----");
