@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistem_inventaris_barang;
+package Model;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Farid Kiftirul Aziz
  */
-public abstract class Orang {
+public abstract class Orang implements Serializable{
     private String nama;
     private String alamat;
     protected String noHP;
@@ -37,6 +39,16 @@ public abstract class Orang {
 
     public abstract String getNoHP();
     public abstract void setNoHP(String noHP);
+
+    @Override
+    public String toString() {
+        String s = "Nama : "+ nama
+                +" Alamat : " + alamat
+                +" NoHp : " + noHP;
+        return s;
+    }
+    
+    
     
     
 }

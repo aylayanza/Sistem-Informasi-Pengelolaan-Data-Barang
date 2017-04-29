@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistem_inventaris_barang;
+package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Farid Kiftirul Aziz
  */
-public class Gudang {
+public class Gudang implements Serializable {
 
     private ArrayList<Barang> daftarBarang;
     private int jmlBarang;
-    private String idGudang;
+    private final String idGudang;
     private String Lokasi;
 
     public String getLokasi() {
@@ -35,9 +36,9 @@ public class Gudang {
         return idGudang;
     }
 
-    public void setIdGudang(String idGudang) {
-        this.idGudang = idGudang;
-    }
+//    public void setIdGudang(String idGudang) {
+//        this.idGudang = idGudang;
+//    }
 
     public void addGudang(Barang b) {
         if (jmlBarang < daftarBarang.size()) {
@@ -58,7 +59,19 @@ public class Gudang {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        String s = "Dafta Barang : "+daftarBarang
+                +" Jumlah Barang : "+jmlBarang
+                +" Id Gudang : "+ idGudang
+                +" Lokasi Gudang : "+Lokasi;
+        return s;
+    }
     
+    public String toStringAll(){
+        return idGudang + "," + jmlBarang + "," ;
+    }
     
 }
 

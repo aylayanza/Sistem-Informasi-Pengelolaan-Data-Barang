@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistem_inventaris_barang;
+package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 /**
  *
  * @author Farid Kiftirul Aziz
  */
-public class Penyedia extends Orang {
+public class Penyedia extends Orang implements Serializable{
 
-    private String idPenyedia;
+    private final String idPenyedia;
     private ArrayList<Barang> daftarBarang;
     private int jmlBarang;
 
@@ -26,9 +28,9 @@ public class Penyedia extends Orang {
         return idPenyedia;
     }
 
-    public void setIdPenyedia(String idPenyedia) {
-        this.idPenyedia = idPenyedia;
-    }
+//    public void setIdPenyedia(String idPenyedia) {
+//        this.idPenyedia = idPenyedia;
+//    }
 
     public int getJmlBarang() {
         return jmlBarang;
@@ -72,5 +74,19 @@ public class Penyedia extends Orang {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        String s = "Id Penyedia : "+ idPenyedia
+                +" Daftar Barang : "+daftarBarang
+                +" Jumlah Barang : "+jmlBarang;
+        return s;
+    }
+
+    public String toStringAll() {
+        return idPenyedia + " , " + getNama() + " , " +getAlamat() + " , " + daftarBarang;
+    }
+    
+    
 
 }
