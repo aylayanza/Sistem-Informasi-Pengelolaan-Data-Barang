@@ -89,13 +89,14 @@ public class Console {
                         System.out.println("--- Cari Barang berdasarkan Index ---");
                         System.out.print(" - Masukkan Index Barang : ");
                         int index = inputInteger();
-
+                        
                         break;
                     case 5:
                         System.out.println("--- Cari Barang berdasarkan Id ---");
                         System.out.print(" - Masukkan Id Barang : ");
                         id = IStr.nextLine();
-
+                        Barang e = apl.getBarang(id);
+                        System.out.println(e);
                         break;
                     case 0:
                         break;
@@ -151,23 +152,24 @@ public class Console {
                         System.out.print(" Id Petugas : ");
                         String id = IStr.nextLine();
                         apl.removePetugas(id);
-
                         break;
                     case 4:
                         System.out.println("--- Show All Petugas ---");
-
+                        apl.viewListConsole(apl.getListPetugas());
                         break;
                     case 5:
                         System.out.println("--- Search Petugas by Index ---");
                         System.out.print(" Masukkan index Petugas : ");
                         int index = inputInteger();
-
+//                        e = apl.getPetugas(index);
+//                        System.out.println(e);
                         break;
                     case 6:
                         System.out.println("--- Search Petugas by Id ---");
                         System.out.print(" Masukkan id Petugas : ");
                         id = IStr.nextLine();
-
+                        Petugas e = apl.getPetugasI(id);
+                        System.out.println(e);
                         break;
                     case 0:
                         break;
@@ -275,7 +277,7 @@ public class Console {
                         System.out.println("----Remove Barang----");
                         System.out.println("- ID barang : ");
                         String id3 = IStr.nextLine();
-
+                        apl.removeBarang(id3);
                         break;
                     case 0:
                         break;
