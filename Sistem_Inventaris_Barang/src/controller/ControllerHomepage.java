@@ -7,7 +7,7 @@ package controller;
 
 import Model.Aplikasi;
 import Model.Petugas;
-import ViewGUI.Barang;
+import Model.Barang;
 import ViewGUI.Gudang;
 import ViewGUI.MenuUtama;
 import ViewGUI.Penyedia;
@@ -33,37 +33,36 @@ public class ControllerHomepage implements ActionListener {
         view = new ViewGUI.Petugas();
         view.setVisible(false);
         view1 = new Penyedia();
-         view1.setVisible(false);
+        view1.setVisible(false);
         view2 = new Barang();
         view3 = new Gudang();
         gui.setVisible(true);
         gui.addactionlistener(this);
-       
-        
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object o = e.getSource();
         if (o.equals(gui.getMPetugas())) {
-             view.setVisible(true);
+            view.setVisible(true);
             gui.dispose();
-           
+
         }
         if (o.equals(gui.getMpenyedia())) {
             view1.setVisible(true);
             gui.dispose();
-            
+
         }
         if (o.equals(gui.getMbarang())) {
-              view2.setVisible(true);
+            view2.setVisible(true);
             gui.dispose();
-          
+
         }
         if (o.equals(gui.getMgudang())) {
             view3.setVisible(true);
-               gui.dispose();
-               
+            gui.dispose();
+
         }
     }
 
