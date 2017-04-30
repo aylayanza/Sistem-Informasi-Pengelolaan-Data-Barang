@@ -24,15 +24,14 @@ public class Aplikasi {
 
 //    private ArrayList<Orang> listOrang;
 //    private FileIO save;
-    public Aplikasi() {
-//        listOrang = new ArrayList();
-        save = new FileIO();
-        daftarPenyedia = new ArrayList();
-        daftarGudang = new ArrayList();
-        daftarPetugas = new ArrayList();
-
-    }
-
+//    public Aplikasi() {
+////        listOrang = new ArrayList();
+//        save = new FileIO();
+//        daftarPenyedia = new ArrayList();
+//        daftarGudang = new ArrayList();
+//        daftarPetugas = new ArrayList();
+//
+//    }
     private ArrayList<Penyedia> daftarPenyedia = new ArrayList<>();
     private ArrayList<Petugas> daftarPetugas = new ArrayList<>();
     private ArrayList<Gudang> daftarGudang = new ArrayList<>();
@@ -43,34 +42,21 @@ public class Aplikasi {
     private int jmlGudang;
     private int jmlBarang;
 
-    //Barang
-    public Barang getBarang(String Id) {
-        return daftarBarang.stream()
-                .filter(e -> e.getID_Barang().equals(Id))
-                .findFirst().orElse(null);
+    //Coba-coba
+//    public Penyedia getDaftarBarang() {
+//        return getDaftarBarang();
+//    }
+    public Penyedia getDaftarBarang() {
+        return getDaftarBarang();
     }
 
-    public Barang getSetBarang(String Id) {
-        Barang i = getBarang(Id);
-        if ((i != null) && (i instanceof Barang)) {
-            return i;
-        } else {
-            throw new IllegalStateException("Barang tidak ada");
-        }
-    }
-
-    public Barang getBarangByIndeks(int indeks) {
-        Barang k = daftarBarang.get(indeks);
-        return k;
-
-    }
-
-    public void createBarang(String nama, String idBarang, int jmlBarang, String tgl, double harga) {
-        Barang b = new Barang(nama, idBarang, jmlBarang, tgl, harga);
+    public void createBarang(Barang b) throws IOException {
+//        Barang b = new Barang(nama, idBarang, jmlBarang, tgl, harga);
         daftarBarang.add(b);
+//        saveBarang();
     }
 
-    public void removeBarang(String id) {
+    public void removeBarang(int id) {
         for (int i = 0; i < jmlBarang; i++) {
             if (daftarBarang.get(i).getID_Barang().equals(id)) {
                 daftarBarang.remove(i);
@@ -79,41 +65,10 @@ public class Aplikasi {
         }
     }
 
-    //enyedia
-    public void addPenyedia(Penyedia p) {
-        if (jmlPenyedia < daftarPenyedia.size()) {
-            this.daftarPenyedia.add(p);
-        }
-        this.jmlPenyedia++;
-    }
-
-    public Penyedia getPenyedia(String id) {
-        Penyedia p = null;
-        for (int i = 0; i < jmlPenyedia; i++) {
-            if (daftarPenyedia.get(i).getIdPenyedia().equals(id)) {
-                p = daftarPenyedia.get(i);
-                break;
-            }
-        }
-        return p;
-    }
-
-    public Penyedia getPenyedia(int index) {
-        Penyedia pny = daftarPenyedia.get(index);
-        return pny;
-    }
-
-    public void createPenyedia(String nama, String alamat, String idPenyedia, int noHP) {
-        Penyedia pny = new Penyedia(nama, alamat, idPenyedia, noHP);
-        daftarPenyedia.add(pny);
-    }
-
-    //Petugas
-    public void addPetugas(Petugas q) {
-        if (jmlPetugas < daftarPetugas.size()) {
-            this.daftarPetugas.add(q);
-        }
-        this.jmlPetugas++;
+    public String[] ListBarang() throws IOException {
+        List listbarang = daftarBarang.stream().map(E -> "ID Barang : " + E.getID_Barang() + ", "
+                + "Nama Barang : " + E.getNamaBarang()).collect(Collectors.toList());
+        return (String[]) listbarang.stream().toArray(arr -> new String[arr]);
     }
 
     public Petugas getPetugas(String id) {
@@ -127,16 +82,8 @@ public class Aplikasi {
         return p;
     }
 
-    public Petugas getPetugas(int index) {
-        Petugas ptg = daftarPetugas.get(index);
-        return ptg;
-    }
-
-    public void addGudang(Barang b) {
-        if (jmlBarang < daftarBarang.size()) {
-            this.daftarBarang.add(b);
-        }
-        this.jmlBarang++;
+    public void addPetugas(Petugas p) throws IOException {
+        daftarPetugas.add(p);
     }
 
     public void removePetugas(String id) {
@@ -148,14 +95,29 @@ public class Aplikasi {
         }
     }
 
-    //Login Penyedia
-    public boolean LoginPenyedia(String Username, String Password) {
-        for (Penyedia pny : daftarPenyedia) {
-            if (pny.getUsername().equals(Username) && pny.getPassword().equals(Password)) {
-                return true;
+    public String[] ListPetugas() throws IOException {
+        List listpetugas = daftarPetugas.stream().map(E -> "ID Petugas : " + E.getIdPetugas()).collect(Collectors.toList());
+        return (String[]) listpetugas.stream().toArray(arr -> new String[arr]);
+    }
+
+    public void addPenyedia(Penyedia e) throws IOException {
+        daftarPenyedia.add(e);
+    }
+
+    public Penyedia getPenyedia(String id) {
+        Penyedia p = null;
+        for (int i = 0; i < jmlPenyedia; i++) {
+            if (daftarPenyedia.get(i).getIdPenyedia().equals(id)) {
+                p = daftarPenyedia.get(i);
+                break;
             }
         }
-        return false;
+        return p;
+    }
+
+    public String[] ListPenyedia() throws IOException {
+        List listpenyedia = daftarPenyedia.stream().map(E -> "ID Penyedia : " + E.getIdPenyedia()).collect(Collectors.toList());
+        return (String[]) listpenyedia.stream().toArray(arr -> new String[arr]);
     }
 
     //Login Petugas
@@ -168,58 +130,146 @@ public class Aplikasi {
         return false;
     }
 
-//    public void createBarang(String nama, String idBarang, int jmlBarang, String tgl, double harga) {
-//        daftarBarang.add(new Barang(nama, idBarang, jmlBarang, tgl, harga));
-//    }
-    public void createPetugas(String nama, String alamat, int noHP) {
-        Petugas ptg = new Petugas(nama, alamat, noHP);
-
-    }
-
-    public Petugas getPetugasI(String Id) {
-        return daftarPetugas.stream()
-                .filter(e -> e.getIdPetugas().equals(Id))
-                .findFirst().orElse(null);
-    }
-
-    public Petugas getSetPetugas(String Id) {
-        Petugas i = getPetugas(Id);
-        if ((i != null) && (i instanceof Petugas)) {
-            return i;
-        } else {
-            throw new IllegalStateException("Barang tidak ada");
+    //Login Penyedia
+    public boolean LoginPenyedia(String Username, String Password) {
+        for (Penyedia pny : daftarPenyedia) {
+            if (pny.getUsername().equals(Username) && pny.getPassword().equals(Password)) {
+                return true;
+            }
         }
+        return false;
     }
 
-    //Tambahan
-    public void viewListConsole(String[] list) {
-        Arrays.stream(list).forEach(System.out::println);
-    }
-
-    public String[] getListBarang() {
-        List ID_Barang = daftarBarang.stream()
-                .map(e -> e.toStringAll()).collect(Collectors.toList());
-        return (String[]) ID_Barang.stream().toArray(size -> new String[size]);
-    }
-
-    public String[] getListPenyedia() {
-        List idPenyedia = daftarPenyedia.stream()
-                .map(e -> e.toStringAll()).collect(Collectors.toList());
-        return (String[]) idPenyedia.stream().toArray(size -> new String[size]);
-    }
-
-    public String[] getListPetugas() {
-        List idPetugas = daftarPetugas.stream()
-                .map(e -> e.toStringAll()).collect(Collectors.toList());
-        return (String[]) idPetugas.stream().toArray(size -> new String[size]);
-    }
-
-    public String[] getListGudang() {
-        List idGudang = daftarGudang.stream()
-                .map(e -> e.toStringAll()).collect(Collectors.toList());
-        return (String[]) idGudang.stream().toArray(size -> new String[size]);
-    }
-
+//    //Barang
+//    public Barang getBarang(String Id) {
+//        return daftarBarang.stream()
+//                .filter(e -> e.getID_Barang().equals(Id))
+//                .findFirst().orElse(null);
+//    }
+//
+//    public Barang getSetBarang(String Id) {
+//        Barang i = getBarang(Id);
+//        if ((i != null) && (i instanceof Barang)) {
+//            return i;
+//        } else {
+//            throw new IllegalStateException("Barang tidak ada");
+//        }
+//    }
+//
+//    public Barang getBarangByIndeks(int indeks) {
+//        Barang k = daftarBarang.get(indeks);
+//        return k;
+//
+//    }
+//
+//    public void createBarang(String nama, String idBarang, int jmlBarang, String tgl, double harga) {
+//        Barang b = new Barang(nama, idBarang, jmlBarang, tgl, harga);
+//        daftarBarang.add(b);
+//    }
+//
+//    //Bara
+//
+// 
+//
+// 
+//
+////    public Barang getBarang(String id) {
+////        return daftarBarang.stream()
+////                .filter(b -> b.getID_Barang().equals(idBarang))
+////                .findFirst().orElse(null);
+////    }
+//
+//
+//    //enyedia
+//    public void addPenyedia(Penyedia p) {
+//        if (jmlPenyedia < daftarPenyedia.size()) {
+//            this.daftarPenyedia.add(p);
+//        }
+//        this.jmlPenyedia++;
+//    }
+//
+//
+//    public Penyedia getPenyedia(int index) {
+//        Penyedia pny = daftarPenyedia.get(index);
+//        return pny;
+//    }
+//
+//    public void createPenyedia(String nama, String alamat, String idPenyedia, int noHP) {
+//        Penyedia pny = new Penyedia(nama, alamat, idPenyedia, noHP);
+//        daftarPenyedia.add(pny);
+//    }
+//
+//    //Petugas
+////    public void addPetugas(Petugas q) {
+////        if (jmlPetugas < daftarPetugas.size()) {
+////            this.daftarPetugas.add(q);
+////        }
+////        this.jmlPetugas++;
+////    }
+//   
+//
+//
+//    public Petugas getPetugas(int index) {
+//        Petugas ptg = daftarPetugas.get(index);
+//        return ptg;
+//    }
+//
+//    public void addGudang(Barang b) {
+//        if (jmlBarang < daftarBarang.size()) {
+//            this.daftarBarang.add(b);
+//        }
+//        this.jmlBarang++;
+//    }
+//
+//
+//
+//
+////    public void createBarang(String nama, String idBarang, int jmlBarang, String tgl, double harga) {
+////        daftarBarang.add(new Barang(nama, idBarang, jmlBarang, tgl, harga));
+////    }
+//    public void createPetugas(String nama, String alamat, int noHP) {
+//        Petugas ptg = new Petugas(nama, alamat, noHP);
+//
+//    }
+//
+//    public Petugas getPetugasI(String Id) {
+//        return daftarPetugas.stream()
+//                .filter(e -> e.getIdPetugas().equals(Id))
+//                .findFirst().orElse(null);
+//    }
+//
+//    public Petugas getSetPetugas(String Id) {
+//        Petugas i = getPetugas(Id);
+//        if ((i != null) && (i instanceof Petugas)) {
+//            return i;
+//        } else {
+//            throw new IllegalStateException("Barang tidak ada");
+//        }
+//    }
+//
+//    //Tambahan
+//    public void viewListConsole(String[] list) {
+//        Arrays.stream(list).forEach(System.out::println);
+//    }
+//   
+//
+//    public String[] getListPenyedia() {
+//        List idPenyedia = daftarPenyedia.stream()
+//                .map(e -> e.toStringAll()).collect(Collectors.toList());
+//        return (String[]) idPenyedia.stream().toArray(size -> new String[size]);
+//    }
+//
+//    public String[] getListPetugas() {
+//        List idPetugas = daftarPetugas.stream()
+//                .map(e -> e.toStringAll()).collect(Collectors.toList());
+//        return (String[]) idPetugas.stream().toArray(size -> new String[size]);
+//    }
+//
+//    public String[] getListGudang() {
+//        List idGudang = daftarGudang.stream()
+//                .map(e -> e.toStringAll()).collect(Collectors.toList());
+//        return (String[]) idGudang.stream().toArray(size -> new String[size]);
+//    }
     //Database Barang
     public void loadBarang() throws FileNotFoundException, IOException {
         try {
@@ -315,4 +365,5 @@ public class Aplikasi {
             throw new IOException("error " + ex.getMessage());
         }
     }
+
 }

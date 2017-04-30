@@ -1,9 +1,20 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package ViewGUI;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -1187,5 +1198,750 @@ public class Barang extends javax.swing.JFrame {
     private javax.swing.JTextArea txtDetailGudang;
     private javax.swing.JTextArea txtDetailPny;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnAddGudang() {
+        return btnAddGudang;
+    }
+
+    public void setBtnAddGudang(JButton btnAddGudang) {
+        this.btnAddGudang = btnAddGudang;
+    }
+
+    public JButton getBtnAddP() {
+        return btnAddP;
+    }
+
+    public void setBtnAddP(JButton btnAddP) {
+        this.btnAddP = btnAddP;
+    }
+
+    public JButton getBtnAddP1() {
+        return btnAddP1;
+    }
+
+    public void setBtnAddP1(JButton btnAddP1) {
+        this.btnAddP1 = btnAddP1;
+    }
+
+    public JButton getBtnAddP3() {
+        return btnAddP3;
+    }
+
+    public void setBtnAddP3(JButton btnAddP3) {
+        this.btnAddP3 = btnAddP3;
+    }
+
+    public JButton getBtnAddP4() {
+        return btnAddP4;
+    }
+
+    public void setBtnAddP4(JButton btnAddP4) {
+        this.btnAddP4 = btnAddP4;
+    }
+
+    public JButton getBtnAddP5() {
+        return btnAddP5;
+    }
+
+    public void setBtnAddP5(JButton btnAddP5) {
+        this.btnAddP5 = btnAddP5;
+    }
+
+    public JButton getBtnAddP6() {
+        return btnAddP6;
+    }
+
+    public void setBtnAddP6(JButton btnAddP6) {
+        this.btnAddP6 = btnAddP6;
+    }
+
+    public JButton getBtnBarang() {
+        return btnBarang;
+    }
+
+    public void setBtnBarang(JButton btnBarang) {
+        this.btnBarang = btnBarang;
+    }
+
+    public JButton getBtnBarang2() {
+        return btnBarang2;
+    }
+
+    public void setBtnBarang2(JButton btnBarang2) {
+        this.btnBarang2 = btnBarang2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public void setjLabel16(JLabel jLabel16) {
+        this.jLabel16 = jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public void setjLabel17(JLabel jLabel17) {
+        this.jLabel17 = jLabel17;
+    }
+
+    public JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    public void setjLabel18(JLabel jLabel18) {
+        this.jLabel18 = jLabel18;
+    }
+
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public void setjLabel19(JLabel jLabel19) {
+        this.jLabel19 = jLabel19;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public void setjLabel20(JLabel jLabel20) {
+        this.jLabel20 = jLabel20;
+    }
+
+    public JLabel getjLabel25() {
+        return jLabel25;
+    }
+
+    public void setjLabel25(JLabel jLabel25) {
+        this.jLabel25 = jLabel25;
+    }
+
+    public JLabel getjLabel26() {
+        return jLabel26;
+    }
+
+    public void setjLabel26(JLabel jLabel26) {
+        this.jLabel26 = jLabel26;
+    }
+
+    public JLabel getjLabel27() {
+        return jLabel27;
+    }
+
+    public void setjLabel27(JLabel jLabel27) {
+        this.jLabel27 = jLabel27;
+    }
+
+    public JLabel getjLabel28() {
+        return jLabel28;
+    }
+
+    public void setjLabel28(JLabel jLabel28) {
+        this.jLabel28 = jLabel28;
+    }
+
+    public JLabel getjLabel29() {
+        return jLabel29;
+    }
+
+    public void setjLabel29(JLabel jLabel29) {
+        this.jLabel29 = jLabel29;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel33() {
+        return jLabel33;
+    }
+
+    public void setjLabel33(JLabel jLabel33) {
+        this.jLabel33 = jLabel33;
+    }
+
+    public JLabel getjLabel34() {
+        return jLabel34;
+    }
+
+    public void setjLabel34(JLabel jLabel34) {
+        this.jLabel34 = jLabel34;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel10() {
+        return jPanel10;
+    }
+
+    public void setjPanel10(JPanel jPanel10) {
+        this.jPanel10 = jPanel10;
+    }
+
+    public JPanel getjPanel11() {
+        return jPanel11;
+    }
+
+    public void setjPanel11(JPanel jPanel11) {
+        this.jPanel11 = jPanel11;
+    }
+
+    public JPanel getjPanel12() {
+        return jPanel12;
+    }
+
+    public void setjPanel12(JPanel jPanel12) {
+        this.jPanel12 = jPanel12;
+    }
+
+    public JPanel getjPanel13() {
+        return jPanel13;
+    }
+
+    public void setjPanel13(JPanel jPanel13) {
+        this.jPanel13 = jPanel13;
+    }
+
+    public JPanel getjPanel14() {
+        return jPanel14;
+    }
+
+    public void setjPanel14(JPanel jPanel14) {
+        this.jPanel14 = jPanel14;
+    }
+
+    public JPanel getjPanel15() {
+        return jPanel15;
+    }
+
+    public void setjPanel15(JPanel jPanel15) {
+        this.jPanel15 = jPanel15;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public void setjPanel4(JPanel jPanel4) {
+        this.jPanel4 = jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public void setjPanel6(JPanel jPanel6) {
+        this.jPanel6 = jPanel6;
+    }
+
+    public JPanel getjPanel7() {
+        return jPanel7;
+    }
+
+    public void setjPanel7(JPanel jPanel7) {
+        this.jPanel7 = jPanel7;
+    }
+
+    public JPanel getjPanel8() {
+        return jPanel8;
+    }
+
+    public void setjPanel8(JPanel jPanel8) {
+        this.jPanel8 = jPanel8;
+    }
+
+    public JPanel getjPanel9() {
+        return jPanel9;
+    }
+
+    public void setjPanel9(JPanel jPanel9) {
+        this.jPanel9 = jPanel9;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JScrollPane getjScrollPane4() {
+        return jScrollPane4;
+    }
+
+    public void setjScrollPane4(JScrollPane jScrollPane4) {
+        this.jScrollPane4 = jScrollPane4;
+    }
+
+    public JScrollPane getjScrollPane5() {
+        return jScrollPane5;
+    }
+
+    public void setjScrollPane5(JScrollPane jScrollPane5) {
+        this.jScrollPane5 = jScrollPane5;
+    }
+
+    public JScrollPane getjScrollPane6() {
+        return jScrollPane6;
+    }
+
+    public void setjScrollPane6(JScrollPane jScrollPane6) {
+        this.jScrollPane6 = jScrollPane6;
+    }
+
+    public JScrollPane getjScrollPane7() {
+        return jScrollPane7;
+    }
+
+    public void setjScrollPane7(JScrollPane jScrollPane7) {
+        this.jScrollPane7 = jScrollPane7;
+    }
+
+    public JList<String> getListGudang() {
+        return listGudang;
+    }
+
+    public void setListGudang(JList<String> listGudang) {
+        this.listGudang = listGudang;
+    }
+
+    public JList<String> getListPenyedia() {
+        return listPenyedia;
+    }
+
+    public void setListPenyedia(JList<String> listPenyedia) {
+        this.listPenyedia = listPenyedia;
+    }
+
+    public JPanel getPanelGudang() {
+        return panelGudang;
+    }
+
+    public void setPanelGudang(JPanel panelGudang) {
+        this.panelGudang = panelGudang;
+    }
+
+    public JPanel getPanelPenyedia() {
+        return panelPenyedia;
+    }
+
+    public void setPanelPenyedia(JPanel panelPenyedia) {
+        this.panelPenyedia = panelPenyedia;
+    }
+
+    public JTable getTabBarangG() {
+        return tabBarangG;
+    }
+
+    public void setTabBarangG(JTable tabBarangG) {
+        this.tabBarangG = tabBarangG;
+    }
+
+    public JTable getTabBarangP() {
+        return tabBarangP;
+    }
+
+    public void setTabBarangP(JTable tabBarangP) {
+        this.tabBarangP = tabBarangP;
+    }
+
+    public JTabbedPane getTabPenyedia() {
+        return tabPenyedia;
+    }
+
+    public void setTabPenyedia(JTabbedPane tabPenyedia) {
+        this.tabPenyedia = tabPenyedia;
+    }
+
+    public JTextField getTdNamaBarangG() {
+        return tdNamaBarangG;
+    }
+
+    public void setTdNamaBarangG(JTextField tdNamaBarangG) {
+        this.tdNamaBarangG = tdNamaBarangG;
+    }
+
+    public JTextField getTfAlamat() {
+        return tfAlamat;
+    }
+
+    public void setTfAlamat(JTextField tfAlamat) {
+        this.tfAlamat = tfAlamat;
+    }
+
+    public JTextField getTfAlamat1() {
+        return tfAlamat1;
+    }
+
+    public void setTfAlamat1(JTextField tfAlamat1) {
+        this.tfAlamat1 = tfAlamat1;
+    }
+
+    public JTextField getTfAlamat3() {
+        return tfAlamat3;
+    }
+
+    public void setTfAlamat3(JTextField tfAlamat3) {
+        this.tfAlamat3 = tfAlamat3;
+    }
+
+    public JTextField getTfHarga() {
+        return tfHarga;
+    }
+
+    public void setTfHarga(JTextField tfHarga) {
+        this.tfHarga = tfHarga;
+    }
+
+    public JTextField getTfHargaG() {
+        return tfHargaG;
+    }
+
+    public void setTfHargaG(JTextField tfHargaG) {
+        this.tfHargaG = tfHargaG;
+    }
+
+    public JTextField getTfIdBarang() {
+        return tfIdBarang;
+    }
+
+    public void setTfIdBarang(JTextField tfIdBarang) {
+        this.tfIdBarang = tfIdBarang;
+    }
+
+    public JTextField getTfIdBarangG() {
+        return tfIdBarangG;
+    }
+
+    public void setTfIdBarangG(JTextField tfIdBarangG) {
+        this.tfIdBarangG = tfIdBarangG;
+    }
+
+    public JTextField getTfIdG() {
+        return tfIdG;
+    }
+
+    public void setTfIdG(JTextField tfIdG) {
+        this.tfIdG = tfIdG;
+    }
+
+    public JTextField getTfIdGudangB() {
+        return tfIdGudangB;
+    }
+
+    public void setTfIdGudangB(JTextField tfIdGudangB) {
+        this.tfIdGudangB = tfIdGudangB;
+    }
+
+    public JTextField getTfIdP() {
+        return tfIdP;
+    }
+
+    public void setTfIdP(JTextField tfIdP) {
+        this.tfIdP = tfIdP;
+    }
+
+    public JTextField getTfIdP1() {
+        return tfIdP1;
+    }
+
+    public void setTfIdP1(JTextField tfIdP1) {
+        this.tfIdP1 = tfIdP1;
+    }
+
+    public JTextField getTfIdP3() {
+        return tfIdP3;
+    }
+
+    public void setTfIdP3(JTextField tfIdP3) {
+        this.tfIdP3 = tfIdP3;
+    }
+
+    public JTextField getTfIdP4() {
+        return tfIdP4;
+    }
+
+    public void setTfIdP4(JTextField tfIdP4) {
+        this.tfIdP4 = tfIdP4;
+    }
+
+    public JTextField getTfIdP5() {
+        return tfIdP5;
+    }
+
+    public void setTfIdP5(JTextField tfIdP5) {
+        this.tfIdP5 = tfIdP5;
+    }
+
+    public JTextField getTfIdP6() {
+        return tfIdP6;
+    }
+
+    public void setTfIdP6(JTextField tfIdP6) {
+        this.tfIdP6 = tfIdP6;
+    }
+
+    public JTextField getTfIdPenyediaB() {
+        return tfIdPenyediaB;
+    }
+
+    public void setTfIdPenyediaB(JTextField tfIdPenyediaB) {
+        this.tfIdPenyediaB = tfIdPenyediaB;
+    }
+
+    public JTextField getTfLokasiGudang() {
+        return tfLokasiGudang;
+    }
+
+    public void setTfLokasiGudang(JTextField tfLokasiGudang) {
+        this.tfLokasiGudang = tfLokasiGudang;
+    }
+
+    public JTextField getTfNama() {
+        return tfNama;
+    }
+
+    public void setTfNama(JTextField tfNama) {
+        this.tfNama = tfNama;
+    }
+
+    public JTextField getTfNama1() {
+        return tfNama1;
+    }
+
+    public void setTfNama1(JTextField tfNama1) {
+        this.tfNama1 = tfNama1;
+    }
+
+    public JTextField getTfNama3() {
+        return tfNama3;
+    }
+
+    public void setTfNama3(JTextField tfNama3) {
+        this.tfNama3 = tfNama3;
+    }
+
+    public JTextField getTfNamaBarang() {
+        return tfNamaBarang;
+    }
+
+    public void setTfNamaBarang(JTextField tfNamaBarang) {
+        this.tfNamaBarang = tfNamaBarang;
+    }
+
+    public JTextField getTfNoHP() {
+        return tfNoHP;
+    }
+
+    public void setTfNoHP(JTextField tfNoHP) {
+        this.tfNoHP = tfNoHP;
+    }
+
+    public JTextField getTfNoHP1() {
+        return tfNoHP1;
+    }
+
+    public void setTfNoHP1(JTextField tfNoHP1) {
+        this.tfNoHP1 = tfNoHP1;
+    }
+
+    public JTextField getTfNoHP3() {
+        return tfNoHP3;
+    }
+
+    public void setTfNoHP3(JTextField tfNoHP3) {
+        this.tfNoHP3 = tfNoHP3;
+    }
+
+    public JTextField getTfStock() {
+        return tfStock;
+    }
+
+    public void setTfStock(JTextField tfStock) {
+        this.tfStock = tfStock;
+    }
+
+    public JTextField getTfStockG() {
+        return tfStockG;
+    }
+
+    public void setTfStockG(JTextField tfStockG) {
+        this.tfStockG = tfStockG;
+    }
+
+    public JTextArea getTxtDetailGudang() {
+        return txtDetailGudang;
+    }
+
+    public void setTxtDetailGudang(JTextArea txtDetailGudang) {
+        this.txtDetailGudang = txtDetailGudang;
+    }
+
+    public JTextArea getTxtDetailPny() {
+        return txtDetailPny;
+    }
+
+    public void setTxtDetailPny(JTextArea txtDetailPny) {
+        this.txtDetailPny = txtDetailPny;
+    }
+
 
 }

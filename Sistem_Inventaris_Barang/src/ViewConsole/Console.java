@@ -15,6 +15,7 @@ import Model.Gudang;
 import Model.Orang;
 import Model.Penyedia;
 import Model.Petugas;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -28,6 +29,7 @@ public class Console {
     private Aplikasi apl;
     private Scanner IInt;
     private Scanner IStr;
+    
 
     public Console(Aplikasi apl) {
         this.apl = apl;
@@ -76,7 +78,8 @@ public class Console {
                         String Lokasi = IStr.nextLine();
                         System.out.println("ID Gudang           :");
                         String idGudang = IStr.nextLine();
-//                        apl.createBarang(nama, idBarang, jmlBarang, tgl, harga, daftarGudang.lokasi, daftarGudang.idGudang);
+                        Barang b = new Barang(idBarang, idBarang, jmlBarang, nama, harga);
+                        apl.createBarang(b);
                         break;
 
                     case 2:
@@ -87,7 +90,8 @@ public class Console {
                         break;
                     case 3:
                         System.out.println("--- Lihat semua Barang ---");
-                        apl.viewListConsole(apl.getListBarang());
+                        ArrayList<Barang> barang= apl.getListBarang();
+                        apl.getListBarang();
                         break;
                     case 4:
                         System.out.println("--- Cari Barang berdasarkan Id ---");

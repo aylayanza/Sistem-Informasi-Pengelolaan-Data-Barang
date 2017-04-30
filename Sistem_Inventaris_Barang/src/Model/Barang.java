@@ -26,7 +26,7 @@ public class Barang implements Serializable{
         this.stokBarang = stokBarang;
         this.tanggal_pembelian = tanggal_pembelian;
         this.hargaBarang = hargaBarang;
-        this.daftarGudang = daftarGudang;
+//        this.daftarGudang = daftarGudang;
     }
     
    
