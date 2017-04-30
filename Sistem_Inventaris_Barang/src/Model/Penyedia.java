@@ -19,7 +19,7 @@ public class Penyedia extends Orang implements Serializable{
     private ArrayList<Barang> daftarBarang;
     private int jmlBarang;
 
-    public Penyedia(String nama, String alamat, String idPenyedia) {
+    public Penyedia(String nama, String alamat, String idPenyedia, int noHP) {
         super(nama, alamat);
         this.idPenyedia = idPenyedia;
     }

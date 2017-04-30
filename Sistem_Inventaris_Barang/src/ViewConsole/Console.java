@@ -53,8 +53,8 @@ public class Console {
                 System.out.println("- 1. Add Barang       ");
                 System.out.println("- 2. Remove Barang         ");
                 System.out.println("- 3. Lihat semua Barang   ");
-                System.out.println("- 4. Cari Barang berdasarkan Index    ");
-                System.out.println("- 5. Cari Barang berdasarkan ID ");
+                System.out.println("- 4. Cari Barang berdasarkan ID    ");
+                System.out.println("- 5. Cari Barang berdasarkan Index ");
                 System.out.println("- 0. Kembali                 ");
                 System.out.println("-----------------------------");
                 System.out.print("- Pilih menu : ");
@@ -72,7 +72,11 @@ public class Console {
                         String tgl = IStr.nextLine();
                         System.out.print(" Harga Barang       : ");
                         double harga = inputInteger();
-                        apl.createBarang(nama, idBarang, jmlBarang, tgl, harga);
+                        System.out.println("Lokasi            :");
+                        String Lokasi = IStr.nextLine();
+                        System.out.println("ID Gudang           :");
+                        String idGudang = IStr.nextLine();
+//                        apl.createBarang(nama, idBarang, jmlBarang, tgl, harga, daftarGudang.lokasi, daftarGudang.idGudang);
                         break;
 
                     case 2:
@@ -86,18 +90,20 @@ public class Console {
                         apl.viewListConsole(apl.getListBarang());
                         break;
                     case 4:
-                        System.out.println("--- Cari Barang berdasarkan Index ---");
-                        System.out.print(" - Masukkan Index Barang : ");
-                        int index = inputInteger();
-                        
-                        break;
-                    case 5:
                         System.out.println("--- Cari Barang berdasarkan Id ---");
                         System.out.print(" - Masukkan Id Barang : ");
                         id = IStr.nextLine();
-                        Barang e = apl.getBarang(id);
-                        System.out.println(e);
+                        Barang k = apl.getBarang(id);
+                        System.out.println(k);
                         break;
+                    case 5:
+                        System.out.println("--- Cari Barang berdasarkan Index ---");
+                        System.out.print(" - Masukkan Index Barang : ");
+                        int index = inputInteger();
+                        k = apl.getBarangByIndeks(index);
+                        System.out.println(k);
+                        break;
+                    
                     case 0:
                         break;
                 }
@@ -158,18 +164,18 @@ public class Console {
                         apl.viewListConsole(apl.getListPetugas());
                         break;
                     case 5:
-                        System.out.println("--- Search Petugas by Index ---");
-                        System.out.print(" Masukkan index Petugas : ");
-                        int index = inputInteger();
-//                        e = apl.getPetugas(index);
-//                        System.out.println(e);
-                        break;
-                    case 6:
                         System.out.println("--- Search Petugas by Id ---");
                         System.out.print(" Masukkan id Petugas : ");
                         id = IStr.nextLine();
-                        Petugas e = apl.getPetugasI(id);
-                        System.out.println(e);
+                        Petugas k = apl.getPetugasI(id);
+                        System.out.println(k);
+                        break;
+                    case 6:
+                        System.out.println("--- Search Petugas by Index ---");
+                        System.out.print(" Masukkan index Petugas : ");
+                        int index = inputInteger();
+                        k = apl.getPetugas(index);
+                        System.out.println(k);
                         break;
                     case 0:
                         break;
@@ -242,38 +248,47 @@ public class Console {
         do {
             try {
                 System.out.println("-----Menu Penyedia-----");
-                System.out.println("1. Add Barang           ");
-                System.out.println("2. Stock Barang         ");
-                System.out.println("3. Detail Barang        ");
-                System.out.println("4. Remove Barang        ");
+                System.out.println("1. Add Penyedia         ");
+                System.out.println("2. Add Barang           ");
+                System.out.println("3. Stock Barang         ");
+                System.out.println("4. Detail Barang        ");
+                System.out.println("5. Remove Barang        ");
                 System.out.println("0. Kembali              ");
                 System.out.println("------------------------");
                 System.out.print("-Pilih Menu : ");
                 pil2 = inputInteger();
                 switch (pil2) {
                     case 1:
+                        System.out.println("----Add Penyedia----");
+                        System.out.println("Nama    :           "); String nama = IStr.nextLine();
+                        System.out.println("Alamat  :           "); String alamat = IStr.nextLine();
+                        System.out.println("Id Penyedia :       "); String idPenyedia = IStr.nextLine();
+                        System.out.println("NoHp    :           "); int noHP = IInt.nextInt();
+                        apl.createPenyedia(nama, alamat, idPenyedia, noHP);
+                    case 2:
                         System.out.println("----Add Barang----");
                         System.out.print("Nama : ");
-                        String NamaBarang = IStr.nextLine();
+                        String Nama = IStr.nextLine();
                         System.out.print(" ID Barang            : ");
                         String ID_Barang = IStr.nextLine();
-                        System.out.print(" Stok Barang          : ");
-                        int stokBarang = IInt.nextInt();
+                        System.out.print(" Jumlah Barang          : ");
+                        int jmlBarang= IInt.nextInt();
                         System.out.print(" Tanggal Pembelian    : ");
                         String tanggal_pembelian = IStr.nextLine();
                         System.out.print(" Harga                : ");
                         double hargaBarang = inputInteger();
+//                        apl.createBarang(Nama, ID_Barang, jmlBarang, tanggal_pembelian, hargaBarang);
                        
                         break;
-                    case 2:
+                    case 3:
                         System.out.println("----Stock Barang----");
 
                         break;
-                    case 3:
+                    case 4:
                         System.out.println("----Detail Barang----");
 
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("----Remove Barang----");
                         System.out.println("- ID barang : ");
                         String id3 = IStr.nextLine();

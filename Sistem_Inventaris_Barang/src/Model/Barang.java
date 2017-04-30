@@ -6,6 +6,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,15 +18,18 @@ public class Barang implements Serializable{
     private int stokBarang;
     private String tanggal_pembelian;
     private double hargaBarang;
-    
-    public Barang(String nama, String idBarang, int jmlBarang, String tgl, double harga){
-        this.NamaBarang = nama;
-        this.ID_Barang = idBarang;
-        this.stokBarang = jmlBarang;
-        this.tanggal_pembelian = tgl;
-        this.hargaBarang = harga;
+    private ArrayList<Gudang> daftarGudang;
+
+    public Barang(String NamaBarang, String ID_Barang, int stokBarang, String tanggal_pembelian, double hargaBarang) {
+        this.NamaBarang = NamaBarang;
+        this.ID_Barang = ID_Barang;
+        this.stokBarang = stokBarang;
+        this.tanggal_pembelian = tanggal_pembelian;
+        this.hargaBarang = hargaBarang;
+        this.daftarGudang = daftarGudang;
     }
     
+   
     public String getNamaBarang() {
         return NamaBarang;
     }
