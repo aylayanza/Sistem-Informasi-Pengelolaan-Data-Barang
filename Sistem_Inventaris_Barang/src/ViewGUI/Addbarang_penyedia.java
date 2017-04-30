@@ -5,6 +5,10 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +20,64 @@ public class Addbarang_penyedia extends javax.swing.JFrame {
      */
     public Addbarang_penyedia() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        Add_bpy.addActionListener(e);
+        Addbpy_h.addActionListener(e);
+        Addbpy_idb.addActionListener(e);
+        Addbpy_jb.addActionListener(e);
+        Addbpy_nm.addActionListener(e);
+        Addbpy_tp.addActionListener(e);
+
+    }
+
+    public JButton getAdd_bpy() {
+        return Add_bpy;
+    }
+
+    public void setAdd_bpy(JButton Add_bpy) {
+        this.Add_bpy = Add_bpy;
+    }
+
+    public JTextField getAddbpy_h() {
+        return Addbpy_h;
+    }
+
+    public void setAddbpy_h(JTextField Addbpy_h) {
+        this.Addbpy_h = Addbpy_h;
+    }
+
+    public JTextField getAddbpy_idb() {
+        return Addbpy_idb;
+    }
+
+    public void setAddbpy_idb(JTextField Addbpy_idb) {
+        this.Addbpy_idb = Addbpy_idb;
+    }
+
+    public JTextField getAddbpy_jb() {
+        return Addbpy_jb;
+    }
+
+    public void setAddbpy_jb(JTextField Addbpy_jb) {
+        this.Addbpy_jb = Addbpy_jb;
+    }
+
+    public JTextField getAddbpy_nm() {
+        return Addbpy_nm;
+    }
+
+    public void setAddbpy_nm(JTextField Addbpy_nm) {
+        this.Addbpy_nm = Addbpy_nm;
+    }
+
+    public JTextField getAddbpy_tp() {
+        return Addbpy_tp;
+    }
+
+    public void setAddbpy_tp(JTextField Addbpy_tp) {
+        this.Addbpy_tp = Addbpy_tp;
     }
 
     /**
@@ -111,7 +173,7 @@ public class Addbarang_penyedia extends javax.swing.JFrame {
                     .addComponent(Addbpy_tp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(Addbpy_h, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)

@@ -5,6 +5,10 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +20,36 @@ public class Create extends javax.swing.JFrame {
      */
     public Create() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        C_password.addActionListener(e);
+        C_username.addActionListener(e);
+        Create.addActionListener(e);
+    }
+
+    public JTextField getC_password() {
+        return C_password;
+    }
+
+    public void setC_password(JTextField C_password) {
+        this.C_password = C_password;
+    }
+
+    public JTextField getC_username() {
+        return C_username;
+    }
+
+    public void setC_username(JTextField C_username) {
+        this.C_username = C_username;
+    }
+
+    public JButton getCreate() {
+        return Create;
+    }
+
+    public void setCreate(JButton Create) {
+        this.Create = Create;
     }
 
     /**

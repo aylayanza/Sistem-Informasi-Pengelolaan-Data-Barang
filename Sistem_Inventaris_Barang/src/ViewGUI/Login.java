@@ -5,6 +5,10 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +20,46 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        Login_lg.addActionListener(e);
+        Login_pass.addActionListener(e);
+        Login_us.addActionListener(e);
+        b_lg.addActionListener(e);
+
+    }
+
+    public JButton getLogin_lg() {
+        return Login_lg;
+    }
+
+    public void setLogin_lg(JButton Login_lg) {
+        this.Login_lg = Login_lg;
+    }
+
+    public JTextField getLogin_pass() {
+        return Login_pass;
+    }
+
+    public void setLogin_pass(JTextField Login_pass) {
+        this.Login_pass = Login_pass;
+    }
+
+    public JTextField getLogin_us() {
+        return Login_us;
+    }
+
+    public void setLogin_us(JTextField Login_us) {
+        this.Login_us = Login_us;
+    }
+
+    public JButton getB_lg() {
+        return b_lg;
+    }
+
+    public void setB_lg(JButton b_lg) {
+        this.b_lg = b_lg;
     }
 
     /**

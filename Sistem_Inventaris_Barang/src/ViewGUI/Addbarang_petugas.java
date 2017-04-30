@@ -5,6 +5,9 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +19,64 @@ public class Addbarang_petugas extends javax.swing.JFrame {
      */
     public Addbarang_petugas() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        Addpt_Apt.addActionListener(e);
+        Addpt_idg.addActionListener(e);
+        Addpt_idp.addActionListener(e);
+        Addpt_lg.addActionListener(e);
+        Addpt_nhp.addActionListener(e);
+        Addpt_nmpt.addActionListener(e);
+
+    }
+
+    public JTextField getAddpt_Apt() {
+        return Addpt_Apt;
+    }
+
+    public void setAddpt_Apt(JTextField Addpt_Apt) {
+        this.Addpt_Apt = Addpt_Apt;
+    }
+
+    public JTextField getAddpt_idg() {
+        return Addpt_idg;
+    }
+
+    public void setAddpt_idg(JTextField Addpt_idg) {
+        this.Addpt_idg = Addpt_idg;
+    }
+
+    public JTextField getAddpt_idp() {
+        return Addpt_idp;
+    }
+
+    public void setAddpt_idp(JTextField Addpt_idp) {
+        this.Addpt_idp = Addpt_idp;
+    }
+
+    public JTextField getAddpt_lg() {
+        return Addpt_lg;
+    }
+
+    public void setAddpt_lg(JTextField Addpt_lg) {
+        this.Addpt_lg = Addpt_lg;
+    }
+
+    public JTextField getAddpt_nhp() {
+        return Addpt_nhp;
+    }
+
+    public void setAddpt_nhp(JTextField Addpt_nhp) {
+        this.Addpt_nhp = Addpt_nhp;
+    }
+
+    public JTextField getAddpt_nmpt() {
+        return Addpt_nmpt;
+    }
+
+    public void setAddpt_nmpt(JTextField Addpt_nmpt) {
+        this.Addpt_nmpt = Addpt_nmpt;
     }
 
     /**

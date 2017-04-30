@@ -5,6 +5,9 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +19,37 @@ public class Gudang extends javax.swing.JFrame {
      */
     public Gudang() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        g_addb.addActionListener(e);
+        g_back.addActionListener(e);
+        g_sb.addActionListener(e);
+
+    }
+
+    public JButton getG_addb() {
+        return g_addb;
+    }
+
+    public void setG_addb(JButton g_addb) {
+        this.g_addb = g_addb;
+    }
+
+    public JButton getG_back() {
+        return g_back;
+    }
+
+    public void setG_back(JButton g_back) {
+        this.g_back = g_back;
+    }
+
+    public JButton getG_sb() {
+        return g_sb;
+    }
+
+    public void setG_sb(JButton g_sb) {
+        this.g_sb = g_sb;
     }
 
     /**

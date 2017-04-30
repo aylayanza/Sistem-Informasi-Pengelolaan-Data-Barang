@@ -5,6 +5,9 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +19,27 @@ public class Showbarang_petugas extends javax.swing.JFrame {
      */
     public Showbarang_petugas() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        b_sbpt.addActionListener(e);
+        r_sbpt.addActionListener(e);
+    }
+
+    public JButton getB_sbpt() {
+        return b_sbpt;
+    }
+
+    public void setB_sbpt(JButton b_sbpt) {
+        this.b_sbpt = b_sbpt;
+    }
+
+    public JButton getR_sbpt() {
+        return r_sbpt;
+    }
+
+    public void setR_sbpt(JButton r_sbpt) {
+        this.r_sbpt = r_sbpt;
     }
 
     /**

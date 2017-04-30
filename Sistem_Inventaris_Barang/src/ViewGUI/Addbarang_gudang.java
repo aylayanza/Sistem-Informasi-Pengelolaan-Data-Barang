@@ -5,6 +5,10 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +20,81 @@ public class Addbarang_gudang extends javax.swing.JFrame {
      */
     public Addbarang_gudang() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        Add_bg.addActionListener(e);
+        Addbg_hb.addActionListener(e);
+        Addbg_idb.addActionListener(e);
+        Addbg_idg.addActionListener(e);
+        Addbg_lks.addActionListener(e);
+        Addbg_nb.addActionListener(e);
+        Addbg_sb.addActionListener(e);
+        Addbg_tp.addActionListener(e);
+    }
+
+    public JButton getAdd_bg() {
+        return Add_bg;
+    }
+
+    public void setAdd_bg(JButton Add_bg) {
+        this.Add_bg = Add_bg;
+    }
+
+    public JTextField getAddbg_hb() {
+        return Addbg_hb;
+    }
+
+    public void setAddbg_hb(JTextField Addbg_hb) {
+        this.Addbg_hb = Addbg_hb;
+    }
+
+    public JTextField getAddbg_idb() {
+        return Addbg_idb;
+    }
+
+    public void setAddbg_idb(JTextField Addbg_idb) {
+        this.Addbg_idb = Addbg_idb;
+    }
+
+    public JTextField getAddbg_idg() {
+        return Addbg_idg;
+    }
+
+    public void setAddbg_idg(JTextField Addbg_idg) {
+        this.Addbg_idg = Addbg_idg;
+    }
+
+    public JTextField getAddbg_lks() {
+        return Addbg_lks;
+    }
+
+    public void setAddbg_lks(JTextField Addbg_lks) {
+        this.Addbg_lks = Addbg_lks;
+    }
+
+    public JTextField getAddbg_nb() {
+        return Addbg_nb;
+    }
+
+    public void setAddbg_nb(JTextField Addbg_nb) {
+        this.Addbg_nb = Addbg_nb;
+    }
+
+    public JTextField getAddbg_sb() {
+        return Addbg_sb;
+    }
+
+    public void setAddbg_sb(JTextField Addbg_sb) {
+        this.Addbg_sb = Addbg_sb;
+    }
+
+    public JTextField getAddbg_tp() {
+        return Addbg_tp;
+    }
+
+    public void setAddbg_tp(JTextField Addbg_tp) {
+        this.Addbg_tp = Addbg_tp;
     }
 
     /**

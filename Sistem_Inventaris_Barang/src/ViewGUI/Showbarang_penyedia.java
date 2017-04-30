@@ -5,6 +5,9 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +19,28 @@ public class Showbarang_penyedia extends javax.swing.JFrame {
      */
     public Showbarang_penyedia() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        b_sbpy.addActionListener(e);
+        r_sbpy.addActionListener(e);
+
+    }
+
+    public JButton getB_sbpy() {
+        return b_sbpy;
+    }
+
+    public void setB_sbpy(JButton b_sbpy) {
+        this.b_sbpy = b_sbpy;
+    }
+
+    public JButton getR_sbpy() {
+        return r_sbpy;
+    }
+
+    public void setR_sbpy(JButton r_sbpy) {
+        this.r_sbpy = r_sbpy;
     }
 
     /**

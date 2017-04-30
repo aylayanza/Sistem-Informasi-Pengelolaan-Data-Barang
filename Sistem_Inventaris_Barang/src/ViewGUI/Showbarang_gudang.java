@@ -5,6 +5,9 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +19,28 @@ public class Showbarang_gudang extends javax.swing.JFrame {
      */
     public Showbarang_gudang() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        b_sbg.addActionListener(e);
+        r_sbg.addActionListener(e);
+
+    }
+
+    public JButton getB_sbg() {
+        return b_sbg;
+    }
+
+    public void setB_sbg(JButton b_sbg) {
+        this.b_sbg = b_sbg;
+    }
+
+    public JButton getR_sbg() {
+        return r_sbg;
+    }
+
+    public void setR_sbg(JButton r_sbg) {
+        this.r_sbg = r_sbg;
     }
 
     /**
