@@ -65,6 +65,22 @@ public class Aplikasi {
         }
     }
 
+    public ArrayList<Barang> getListDaftarBarang() {
+        return daftarBarang;
+    }
+
+    public ArrayList<Gudang> getListDaftarGudang() {
+        return daftarGudang;
+    }
+
+    public ArrayList<Petugas> getListDaftarPetugas() {
+        return daftarPetugas;
+    }
+
+    public ArrayList<Penyedia> getListDaftarPenyedia() {
+        return daftarPenyedia;
+    }
+
     public String[] ListBarang() throws IOException {
         List listbarang = daftarBarang.stream().map(E -> "ID Barang : " + E.getID_Barang() + ", "
                 + "Nama Barang : " + E.getNamaBarang()).collect(Collectors.toList());

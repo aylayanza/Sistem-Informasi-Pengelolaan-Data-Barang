@@ -6,6 +6,7 @@
 package ViewGUI;
 
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
 /**
  *
@@ -26,6 +27,32 @@ public class Petugas extends javax.swing.JFrame {
         shb_pt.addActionListener(e);
         
     }
+
+    public JButton getAdd_bpt() {
+        return Add_bpt;
+    }
+
+    public void setAdd_bpt(JButton Add_bpt) {
+        this.Add_bpt = Add_bpt;
+    }
+
+    public JButton getB_pt() {
+        return b_pt;
+    }
+
+    public void setB_pt(JButton b_pt) {
+        this.b_pt = b_pt;
+    }
+
+    public JButton getShb_pt() {
+        return shb_pt;
+    }
+
+    public void setShb_pt(JButton shb_pt) {
+        this.shb_pt = shb_pt;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

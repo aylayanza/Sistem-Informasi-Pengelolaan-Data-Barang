@@ -5,6 +5,9 @@
  */
 package ViewGUI;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Farid Kiftirul Aziz
@@ -16,6 +19,45 @@ public class Penyedia extends javax.swing.JFrame {
      */
     public Penyedia() {
         initComponents();
+    }
+
+    public void ActionListener(ActionListener e) {
+        bpy.addActionListener(e);
+        p_sb.addActionListener(e);
+        p_addp.addActionListener(e);
+        p_addb.addActionListener(e);
+    }
+
+    public JButton getBpy() {
+        return bpy;
+    }
+
+    public void setBpy(JButton bpy) {
+        this.bpy = bpy;
+    }
+
+    public JButton getP_addb() {
+        return p_addb;
+    }
+
+    public void setP_addb(JButton p_addb) {
+        this.p_addb = p_addb;
+    }
+
+    public JButton getP_addp() {
+        return p_addp;
+    }
+
+    public void setP_addp(JButton p_addp) {
+        this.p_addp = p_addp;
+    }
+
+    public JButton getP_sb() {
+        return p_sb;
+    }
+
+    public void setP_sb(JButton p_sb) {
+        this.p_sb = p_sb;
     }
 
     /**

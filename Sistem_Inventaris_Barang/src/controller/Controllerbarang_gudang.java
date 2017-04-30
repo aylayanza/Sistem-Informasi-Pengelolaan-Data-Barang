@@ -9,6 +9,7 @@ import Model.Aplikasi;
 import Model.Petugas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 
 /**
  *
@@ -29,11 +30,9 @@ public class Controllerbarang_gudang implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object o = e.getSource();
-        
-        if (o.equals(viewPtg.getadd_bpt(viewPtg.getAdd_bpt()))){
-            
-        }
-        
-    
 
+        if (o.equals(viewPtg.getadd_bpt(viewPtg.getAdd_bpt()))) {
+
+        }
+    }
 }
