@@ -6,6 +6,9 @@
 package controller;
 
 import Model.Aplikasi;
+import Model.Barang;
+import Model.Gudang;
+import Model.Petugas;
 import ViewGUI.Viewgudang;
 import ViewGUI.Viewenyedia;
 import ViewGUI.Viewpetugas;
@@ -102,9 +105,74 @@ public class Controllerbarang_gudang extends MouseAdapter implements ActionListe
                 m.addListener(this);
                 A.dispose();
                 viewW = (View) m;
+            } else if (source.equals((A.getJbtnAdd()))) {
+                String nama = A.getAddpt_nmpt().getText();
+                String alamat = A.getAddpt_Apt().getText();
+                String noHP = A.getAddpt_nhp().getText();
+                String lokasi = A.getAddpt_lg().getText();
+                try {
+                    Petugas p = new Petugas(nama, alamat, noHP);
+                    apk.addPetugas(p);
+                    apk.savePetugas();
+                    javax.swing.JOptionPane.showMessageDialog(null, "Petugas Baru telah di tambahkan");
+                } catch (IOException io) {
+                    A.ViewErrorMsg(io.getMessage());
+                }
+                A.reset();
             }
+        } else if (viewW instanceof Addbarang_penyedia) {
+            Addbarang_penyedia p = (Addbarang_penyedia) viewW;
+            if (source.equals(p.getJbackn())) {
+                MainMenu M = new MainMenu();
+                M.setVisible(true);
+                M.addListener(this);
+                p.dispose();
+                viewW = (View) M;
+            } else if (source.equals((p.getAdd_bpy()))) {
+                String namaBarang = p.getAddbpy_nm().getText();
+                String jmlBarang = p.getAddbpy_jb().getText();
+                String tgl = p.getAddbpy_tp().getText();
+                String hargaBarang = p.getAddbpy_h().getText();
+                try {
+//                    apk.addGudang(g);
+                    apk.saveGudang();
+                } catch (IOException io) {
+                    p.ViewErrorMsg(io.getMessage());
+                }
+                p.reset();
+            }
+        } else if (viewW instanceof Login) {
+            Login l = (Login) viewW;
+            if (source.equals(l.getB_lg())) {
+                MainMenu M = new MainMenu();
+                M.setVisible(true);
+                M.addListener(this);
+                l.dispose();
+                viewW = (View) M;
+            } else if (source.equals(l.getLogin_lg())) {
+                String username = l.getLogin_us().getText();
+                String password = l.getLogin_pass().getText();
+                Petugas p = apk.getPetugasUsername(username);
+                try {
+                    if ("admin".equals(username) || p.getUser().equals(username)) {
+                        if ("admin".equals(password) || p.getPass().equals(password)) {
+                            MenuUtama mu = new MenuUtama();
+                            mu.setVisible(true);
+                            mu.addListener(this);
+                            l.dispose();
+                            viewW = (View) mu;
+                        }
+                    }
+                } catch (Exception io) {
+                    JOptionPane.showMessageDialog(null, "Username atau password tidak sesuai");
+                    l.reset();
+                }
+            }
+//        } else if (viewW instanceof MenuUtama) {
+//            MenuUtama MenuUtama = (MenuUtama) viewW;
 
         }
+
     }
 //public class Controllerbarang_gudang extends MouseAdapter implements ActionListener {
 //
