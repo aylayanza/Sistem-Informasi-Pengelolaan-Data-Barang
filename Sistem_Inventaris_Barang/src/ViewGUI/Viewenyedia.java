@@ -13,44 +13,52 @@ import javax.swing.JOptionPane;
  *
  * @author Farid Kiftirul Aziz
  */
-public class Gudang extends javax.swing.JFrame {
+public class Viewenyedia extends javax.swing.JFrame {
 
     /**
-     * Creates new form Petugas
+     * Creates new form Penyedia
      */
-    public Gudang() {
+    public Viewenyedia() {
         initComponents();
     }
 
-    public void ActionListener(ActionListener e) {
-        g_addb.addActionListener(e);
-        g_back.addActionListener(e);
-        g_sb.addActionListener(e);
-
+    public void addListener(ActionListener e) {
+        bpy.addActionListener(e);
+        p_sb.addActionListener(e);
+        p_addp.addActionListener(e);
+        p_addb.addActionListener(e);
     }
 
-    public JButton getG_addb() {
-        return g_addb;
+    public JButton getBpy() {
+        return bpy;
     }
 
-    public void setG_addb(JButton g_addb) {
-        this.g_addb = g_addb;
+    public void setBpy(JButton bpy) {
+        this.bpy = bpy;
     }
 
-    public JButton getG_back() {
-        return g_back;
+    public JButton getP_addb() {
+        return p_addb;
     }
 
-    public void setG_back(JButton g_back) {
-        this.g_back = g_back;
+    public void setP_addb(JButton p_addb) {
+        this.p_addb = p_addb;
     }
 
-    public JButton getG_sb() {
-        return g_sb;
+    public JButton getP_addp() {
+        return p_addp;
     }
 
-    public void setG_sb(JButton g_sb) {
-        this.g_sb = g_sb;
+    public void setP_addp(JButton p_addp) {
+        this.p_addp = p_addp;
+    }
+
+    public JButton getP_sb() {
+        return p_sb;
+    }
+
+    public void setP_sb(JButton p_sb) {
+        this.p_sb = p_sb;
     }
 
     /**
@@ -64,54 +72,55 @@ public class Gudang extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        g_addb = new javax.swing.JButton();
-        g_sb = new javax.swing.JButton();
-        g_back = new javax.swing.JButton();
+        p_addb = new javax.swing.JButton();
+        p_addp = new javax.swing.JButton();
+        p_sb = new javax.swing.JButton();
+        bpy = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("GUDANG");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("PENYEDIA");
 
-        g_addb.setText("ADD BARANG");
+        p_addb.setText("ADD BARANG");
 
-        g_sb.setText("SHOW BARANG");
+        p_addp.setText("ADD PENYEDIA");
 
-        g_back.setText("Back");
+        p_sb.setText("SHOW BARANG");
+
+        bpy.setText("Back");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(g_back, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(g_sb)
-                                    .addComponent(g_addb, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(86, 86, 86)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 51, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(p_sb)
+                            .addComponent(p_addp, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(p_addb, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(bpy)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(25, 25, 25)
-                .addComponent(g_addb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(p_addb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(g_sb)
-                .addGap(23, 23, 23)
-                .addComponent(g_back, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(p_addp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(p_sb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(bpy))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,13 +128,14 @@ public class Gudang extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 21, Short.MAX_VALUE))
         );
 
         pack();
@@ -148,33 +158,33 @@ public class Gudang extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Gudang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Penyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Gudang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Penyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Gudang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Penyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Gudang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Penyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
-//        //</editor-fold>
 //        //</editor-fold>
 //
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new Gudang().setVisible(true);
+//                new Penyedia().setVisible(true);
 //            }
 //        });
-//    }
     public void ViewErrorMsg(String errMsg) {
         JOptionPane.showConfirmDialog(this, errMsg);
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton g_addb;
-    private javax.swing.JButton g_back;
-    private javax.swing.JButton g_sb;
+    private javax.swing.JButton bpy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton p_addb;
+    private javax.swing.JButton p_addp;
+    private javax.swing.JButton p_sb;
     // End of variables declaration//GEN-END:variables
 }

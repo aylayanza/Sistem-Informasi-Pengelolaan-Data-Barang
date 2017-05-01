@@ -7,6 +7,7 @@ package ViewGUI;
 
 import controller.Controllerbarang_gudang;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -23,14 +24,30 @@ public class Addbarang_petugas extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void ActionListener(ActionListener e) {
+    public void addListener(ActionListener e) {
         Addpt_Apt.addActionListener(e);
-        Addpt_idg.addActionListener(e);
-        Addpt_idp.addActionListener(e);
         Addpt_lg.addActionListener(e);
         Addpt_nhp.addActionListener(e);
         Addpt_nmpt.addActionListener(e);
+        btnBack.addActionListener(e);
+        jbtnAdd.addActionListener(e);
 
+    }
+
+    public JButton getJbtnAdd() {
+        return jbtnAdd;
+    }
+
+    public void setJbtnAdd(JButton jbtnAdd) {
+        this.jbtnAdd = jbtnAdd;
+    }
+
+    public JButton getBtnBack() {
+        return btnBack;
+    }
+
+    public void setBtnBack(JButton btnBack) {
+        this.btnBack = btnBack;
     }
 
     public JTextField getAddpt_Apt() {
@@ -41,21 +58,6 @@ public class Addbarang_petugas extends javax.swing.JFrame {
         this.Addpt_Apt = Addpt_Apt;
     }
 
-    public JTextField getAddpt_idg() {
-        return Addpt_idg;
-    }
-
-    public void setAddpt_idg(JTextField Addpt_idg) {
-        this.Addpt_idg = Addpt_idg;
-    }
-
-    public JTextField getAddpt_idp() {
-        return Addpt_idp;
-    }
-
-    public void setAddpt_idp(JTextField Addpt_idp) {
-        this.Addpt_idp = Addpt_idp;
-    }
 
     public JTextField getAddpt_lg() {
         return Addpt_lg;
@@ -94,17 +96,14 @@ public class Addbarang_petugas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Addpt_nmpt = new javax.swing.JTextField();
         Addpt_Apt = new javax.swing.JTextField();
-        Addpt_idp = new javax.swing.JTextField();
         Addpt_nhp = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jbtnAdd = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         Addpt_lg = new javax.swing.JTextField();
-        Addpt_idg = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,48 +114,45 @@ public class Addbarang_petugas extends javax.swing.JFrame {
 
         jLabel3.setText("Alamat Petugas");
 
-        jLabel4.setText("ID Petugas");
-
         jLabel5.setText("No.Hp");
 
-        jButton1.setText("Add");
+        jbtnAdd.setText("Add");
 
         jLabel6.setText("Lokasi Gudang ");
 
-        jLabel7.setText("ID Gudang");
+        btnBack.setText("Back");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(22, 22, 22))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Addpt_idp)
-                                    .addComponent(Addpt_Apt)
-                                    .addComponent(Addpt_nmpt)
-                                    .addComponent(Addpt_nhp, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                                    .addComponent(Addpt_lg)
-                                    .addComponent(Addpt_idg))))))
-                .addContainerGap(82, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Addpt_Apt)
+                            .addComponent(Addpt_nmpt)
+                            .addComponent(Addpt_nhp, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                            .addComponent(Addpt_lg))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnBack)
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jbtnAdd)
+                        .addGap(119, 119, 119))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,24 +167,20 @@ public class Addbarang_petugas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Addpt_Apt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Addpt_idp, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(Addpt_nhp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(Addpt_lg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(Addpt_idg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGap(26, 26, 26)
+                .addComponent(jbtnAdd)
+                .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBack)
                 .addContainerGap())
         );
 
@@ -246,20 +238,17 @@ public class Addbarang_petugas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Addpt_Apt;
-    private javax.swing.JTextField Addpt_idg;
-    private javax.swing.JTextField Addpt_idp;
     private javax.swing.JTextField Addpt_lg;
     private javax.swing.JTextField Addpt_nhp;
     private javax.swing.JTextField Addpt_nmpt;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnBack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbtnAdd;
     // End of variables declaration//GEN-END:variables
 
     public void addListener(Controllerbarang_gudang aThis) {

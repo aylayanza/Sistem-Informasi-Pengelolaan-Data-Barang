@@ -23,11 +23,9 @@ public class Addbarang_gudang extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void ActionListener(ActionListener e) {
+    public void addListener(ActionListener e) {
         Add_bg.addActionListener(e);
         Addbg_hb.addActionListener(e);
-        Addbg_idb.addActionListener(e);
-        Addbg_idg.addActionListener(e);
         Addbg_lks.addActionListener(e);
         Addbg_nb.addActionListener(e);
         Addbg_sb.addActionListener(e);
@@ -42,56 +40,37 @@ public class Addbarang_gudang extends javax.swing.JFrame {
         this.Add_bg = Add_bg;
     }
 
-    public JTextField getAddbg_hb() {
-        return Addbg_hb;
+     public String getNamaBarang (){
+        return Addbg_nb.getText();
     }
 
     public void setAddbg_hb(JTextField Addbg_hb) {
         this.Addbg_hb = Addbg_hb;
     }
 
-    public JTextField getAddbg_idb() {
-        return Addbg_idb;
-    }
-
-    public void setAddbg_idb(JTextField Addbg_idb) {
-        this.Addbg_idb = Addbg_idb;
-    }
-
-    public JTextField getAddbg_idg() {
-        return Addbg_idg;
-    }
-
-    public void setAddbg_idg(JTextField Addbg_idg) {
-        this.Addbg_idg = Addbg_idg;
-    }
-
-    public JTextField getAddbg_lks() {
-        return Addbg_lks;
-    }
 
     public void setAddbg_lks(JTextField Addbg_lks) {
         this.Addbg_lks = Addbg_lks;
     }
 
-    public JTextField getAddbg_nb() {
-        return Addbg_nb;
+    public String getHargaBarang() {
+        return Addbg_nb.getText();
     }
 
     public void setAddbg_nb(JTextField Addbg_nb) {
         this.Addbg_nb = Addbg_nb;
     }
 
-    public JTextField getAddbg_sb() {
-        return Addbg_sb;
+    public String getStokBarang() {
+        return Addbg_sb.getText();
     }
 
     public void setAddbg_sb(JTextField Addbg_sb) {
         this.Addbg_sb = Addbg_sb;
     }
 
-    public JTextField getAddbg_tp() {
-        return Addbg_tp;
+    public String getTanggalPembelian() {
+        return Addbg_tp.getText();
     }
 
     public void setAddbg_tp(JTextField Addbg_tp) {
@@ -115,19 +94,15 @@ public class Addbarang_gudang extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         Addbg_nb = new javax.swing.JTextField();
-        Addbg_idb = new javax.swing.JTextField();
         Addbg_sb = new javax.swing.JTextField();
         Addbg_tp = new javax.swing.JTextField();
         Addbg_hb = new javax.swing.JTextField();
         Addbg_lks = new javax.swing.JTextField();
-        Addbg_idg = new javax.swing.JTextField();
         Add_bg = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
@@ -139,8 +114,6 @@ public class Addbarang_gudang extends javax.swing.JFrame {
 
         jLabel2.setText("Nama Barang");
 
-        jLabel3.setText("ID Barang");
-
         jLabel4.setText("Stock Barang");
 
         jLabel5.setText("Tanggal Pembelian");
@@ -148,8 +121,6 @@ public class Addbarang_gudang extends javax.swing.JFrame {
         jLabel6.setText("Harga Barang");
 
         jLabel7.setText("Lokasi");
-
-        jLabel8.setText("ID Gudang");
 
         Addbg_tp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,12 +140,6 @@ public class Addbarang_gudang extends javax.swing.JFrame {
             }
         });
 
-        Addbg_idg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Addbg_idgActionPerformed(evt);
-            }
-        });
-
         Add_bg.setText("ADD");
         Add_bg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,27 +154,26 @@ public class Addbarang_gudang extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(51, 51, 51)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))))
+                .addGap(50, 50, 50)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Addbg_idg, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Addbg_lks, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                            .addComponent(Addbg_hb, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Addbg_tp, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Addbg_sb, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Addbg_idb, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Addbg_nb, javax.swing.GroupLayout.Alignment.LEADING))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(Addbg_lks, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                        .addComponent(Addbg_hb, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Addbg_tp, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Addbg_sb, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Addbg_nb, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addContainerGap(88, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -225,31 +189,23 @@ public class Addbarang_gudang extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(Addbg_nb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Addbg_sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Addbg_tp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(Addbg_idb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(Addbg_hb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Addbg_sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(Addbg_tp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(Addbg_hb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(Addbg_lks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(Addbg_idg, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(Add_bg)
                 .addContainerGap())
         );
@@ -285,10 +241,6 @@ public class Addbarang_gudang extends javax.swing.JFrame {
     private void Addbg_lksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Addbg_lksActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Addbg_lksActionPerformed
-
-    private void Addbg_idgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Addbg_idgActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Addbg_idgActionPerformed
 
     private void Add_bgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_bgActionPerformed
         // TODO add your handling code here:
@@ -333,8 +285,6 @@ public class Addbarang_gudang extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Add_bg;
     private javax.swing.JTextField Addbg_hb;
-    private javax.swing.JTextField Addbg_idb;
-    private javax.swing.JTextField Addbg_idg;
     private javax.swing.JTextField Addbg_lks;
     private javax.swing.JTextField Addbg_nb;
     private javax.swing.JTextField Addbg_sb;
@@ -342,12 +292,10 @@ public class Addbarang_gudang extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,9 +5,12 @@
  */
 package ViewGUI;
 
+import Model.Penyedia;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,14 +21,49 @@ public class Showbarang_penyedia extends javax.swing.JFrame {
     /**
      * Creates new form Showbarang_penyedia
      */
-    public Showbarang_penyedia() {
+    public void Showbarang_penyedia() {
         initComponents();
+        setHeader();
     }
 
     public void ActionListener(ActionListener e) {
         b_sbpy.addActionListener(e);
         r_sbpy.addActionListener(e);
 
+    }
+    
+    public void setHeader(){
+        String[] header = {"Nama,Id Penyedia"};
+        DefaultTableModel model = new DefaultTableModel (null,header);
+        penyedia.setModel(model);
+    }
+    
+    public void inputData(ArrayList<Penyedia> listpenyedia) {
+        DefaultTableModel model = (DefaultTableModel) penyedia.getModel();
+        for (int i = 0; i < listpenyedia.size(); i++) {
+            if(listpenyedia.get(i).getNama()!=null) {
+                if(listpenyedia.get(i).getIdPenyedia()!=null) {
+                    model.addRow(new String[] {(i+1)+"",listpenyedia.get(i).getNama(),
+                        listpenyedia.get(i).getIdPenyedia(),                
+                    });
+                } else {
+                    model.addRow(new String[] {(i+1)+"",listpenyedia.get(i).getNama(),
+                        listpenyedia.get(i).getIdPenyedia(),
+                        ""
+                    });
+                }
+            } else if(listpenyedia.get(i).getIdPenyedia()!=null) {
+                model.addRow(new String[] {(i+1)+"",listpenyedia.get(i).getNama(),
+                        "",
+                        listpenyedia.get(i).getIdPenyedia()
+                    });
+            } else {
+                model.addRow(new String[] {(i+1)+"",listpenyedia.get(i).getNama(),
+                        "",
+                        ""
+                    });
+            }
+        }
     }
 
     public JButton getB_sbpy() {
@@ -55,24 +93,24 @@ public class Showbarang_penyedia extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        penyedia = new javax.swing.JTable();
         r_sbpy = new javax.swing.JButton();
         b_sbpy = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        penyedia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(penyedia);
 
         r_sbpy.setText("Remove");
 
@@ -161,7 +199,7 @@ public class Showbarang_penyedia extends javax.swing.JFrame {
     private javax.swing.JButton b_sbpy;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable penyedia;
     private javax.swing.JButton r_sbpy;
     // End of variables declaration//GEN-END:variables
 }

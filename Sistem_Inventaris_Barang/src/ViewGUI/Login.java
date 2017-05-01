@@ -24,7 +24,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void ActionListener(ActionListener e) {
+    public void addListener(ActionListener e) {
         Login_lg.addActionListener(e);
         Login_pass.addActionListener(e);
         Login_us.addActionListener(e);

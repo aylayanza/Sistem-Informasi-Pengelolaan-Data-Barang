@@ -37,30 +37,44 @@ public class Aplikasi {
     private ArrayList<Gudang> daftarGudang = new ArrayList<>();
     private ArrayList<Barang> daftarBarang = new ArrayList<>();
     private FileIO save;
-    private int jmlPenyedia;
-    private int jmlPetugas;
-    private int jmlGudang;
-    private int jmlBarang;
+    private int jmlPenyedia = 15;
+    private int jmlPetugas = 5;
+    private int jmlGudang = 10;
+    private int jmlBarang = 10;
 
     //Coba-coba
 //    public Penyedia getDaftarBarang() {
 //        return getDaftarBarang();
 //    }
+    public Aplikasi() {
+
+        this.save = new FileIO();
+    }
+
     public Penyedia getDaftarBarang() {
         return getDaftarBarang();
     }
+//
+//    public void createBarang(Barang b) throws IOException {
+////        Barang b = new Barang(nama, idBarang, jmlBarang, tgl, harga);
+//        daftarBarang.add(b);
+////        saveBarang();
+//    }
 
-    public void createBarang(Barang b) throws IOException {
-//        Barang b = new Barang(nama, idBarang, jmlBarang, tgl, harga);
-        daftarBarang.add(b);
-//        saveBarang();
-    }
-
-    public void removeBarang(int id) {
-        for (int i = 0; i < jmlBarang; i++) {
+    public void removeBarang(String id) {
+        for (int i = 0; i < daftarPenyedia.size(); i++) {
             if (daftarBarang.get(i).getID_Barang().equals(id)) {
                 daftarBarang.remove(i);
                 break;
+            }
+        }
+    }
+
+    public void savebarangtofile() {
+        for (int i = 0; i < daftarPenyedia.size(); i++) {
+            for (int j = 0; j < daftarPenyedia.get(i).getDaftarBarang().size(); j++) {
+                daftarBarang.add(daftarPenyedia.get(i).getDaftarBarang().get(j));
+
             }
         }
     }
@@ -71,6 +85,15 @@ public class Aplikasi {
 
     public ArrayList<Gudang> getListDaftarGudang() {
         return daftarGudang;
+    }
+
+    public Gudang searchGudang(String Lokasi) {
+        for (int i = 0; i < daftarGudang.size(); i++) {
+            if (daftarGudang.get(i).getLokasi().equals(Lokasi)) {
+                return daftarGudang.get(i);
+            }
+        }
+        return null;
     }
 
     public ArrayList<Petugas> getListDaftarPetugas() {
@@ -163,20 +186,20 @@ public class Aplikasi {
 //                .findFirst().orElse(null);
 //    }
 //
-//    public Barang getSetBarang(String Id) {
-//        Barang i = getBarang(Id);
-//        if ((i != null) && (i instanceof Barang)) {
-//            return i;
-//        } else {
-//            throw new IllegalStateException("Barang tidak ada");
-//        }
-//    }
+    public Penyedia getSetBarang(String Id) {
+        Penyedia i = getDaftarBarang();
+        if ((i != null) && (i instanceof Penyedia)) {
+            return i;
+        } else {
+            throw new IllegalStateException("Barang tidak ada");
+        }
+    }
 //
-//    public Barang getBarangByIndeks(int indeks) {
-//        Barang k = daftarBarang.get(indeks);
-//        return k;
-//
-//    }
+    public Barang getBarangByIndeks(int indeks) {
+        Barang k = daftarBarang.get(indeks);
+        return k;
+
+    }
 //
 //    public void createBarang(String nama, String idBarang, int jmlBarang, String tgl, double harga) {
 //        Barang b = new Barang(nama, idBarang, jmlBarang, tgl, harga);
@@ -225,17 +248,18 @@ public class Aplikasi {
 //   
 //
 //
-//    public Petugas getPetugas(int index) {
-//        Petugas ptg = daftarPetugas.get(index);
-//        return ptg;
-//    }
+
+    public Petugas getPetugas(int index) {
+        Petugas ptg = daftarPetugas.get(index);
+        return ptg;
+    }
 //
-//    public void addGudang(Barang b) {
-//        if (jmlBarang < daftarBarang.size()) {
-//            this.daftarBarang.add(b);
-//        }
-//        this.jmlBarang++;
-//    }
+
+    public void addGudang(Gudang g) {
+        if (jmlGudang > daftarGudang.size()) {
+            this.daftarGudang.add(g);
+        }
+    }
 //
 //
 //
@@ -264,16 +288,41 @@ public class Aplikasi {
 //    }
 //
 //    //Tambahan
-//    public void viewListConsole(String[] list) {
-//        Arrays.stream(list).forEach(System.out::println);
-//    }
+
+    public void viewListConsole(String[] list) {
+        Arrays.stream(list).forEach(System.out::println);
+    }
+
+    public void viewBarang() {
+        for (int i = 0; i < daftarGudang.size(); i++) {
+            System.out.println("Lokasi Gudang : " + daftarGudang.get(i).getLokasi());
+            System.out.println(daftarGudang.get(i).getDaftarBarang().size()+"");
+            for (int j = 0; j < daftarGudang.get(i).getDaftarBarang().size(); j++) {
+                System.out.println("Nama Barang :" + daftarGudang.get(i).getDaftarBarang().get(j).getNamaBarang());
+                System.out.println("Id Barang :" + daftarGudang.get(i).getDaftarBarang().get(j).getID_Barang());
+                System.out.println("Tanggal Pembelian :" + daftarGudang.get(i).getDaftarBarang().get(j).getTanggal_pembelian());
+                System.out.println("Nama Barang :" + daftarGudang.get(i).getDaftarBarang().get(j).getStokBarang());
+                System.out.println("Harga Barang :" + daftarGudang.get(i).getDaftarBarang().get(j).getHargaBarang());
+                
+            }
+        }
+    }
+
+    public void ShowGudang() {
+        System.out.println(daftarGudang.size() + "");
+        for (int i = 0; i < daftarGudang.size(); i++) {
+            System.out.println("Lokasi Gudang : " + daftarGudang.get(i).getLokasi());
+        }
+
+    }
 //   
 //
-//    public String[] getListPenyedia() {
-//        List idPenyedia = daftarPenyedia.stream()
-//                .map(e -> e.toStringAll()).collect(Collectors.toList());
-//        return (String[]) idPenyedia.stream().toArray(size -> new String[size]);
-//    }
+
+    public String[] getListPenyedia() {
+        List idPenyedia = daftarPenyedia.stream()
+                .map(e -> e.toStringAll()).collect(Collectors.toList());
+        return (String[]) idPenyedia.stream().toArray(size -> new String[size]);
+    }
 //
 //    public String[] getListPetugas() {
 //        List idPetugas = daftarPetugas.stream()
@@ -287,6 +336,7 @@ public class Aplikasi {
 //        return (String[]) idGudang.stream().toArray(size -> new String[size]);
 //    }
     //Database Barang
+
     public void loadBarang() throws FileNotFoundException, IOException {
         try {
             daftarBarang = (ArrayList<Barang>) save.getObject("FileBarang.dat");
@@ -382,4 +432,14 @@ public class Aplikasi {
         }
     }
 
+//    public String ambilString(String idPenyedia, Penyedia p, Gudang g) {
+//        Penyedia p = getPenyedia(idPenyedia);
+//        Barang b = p.getBarang)();
+//        Gudang g = b.getID_Barang();
+//        
+//        String s = "";
+//        s = s + p.toString();
+//        return s;
+//        
+//    }
 }

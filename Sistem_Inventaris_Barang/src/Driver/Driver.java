@@ -15,10 +15,10 @@ import controller.ControllerHomepage;
  */
 public class Driver {
     public static void main(String[] args) {
-//        Aplikasi app = new Aplikasi();
+        Aplikasi app = new Aplikasi();
 //        
-//        Console view = new Console(app);
-//        view.mainMenu();
-        new ControllerHomepage();
+        Console view = new Console(app);
+        view.mainMenu();
+//        new ControllerHomepage();
     }
 }

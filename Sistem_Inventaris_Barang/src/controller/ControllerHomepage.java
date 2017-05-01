@@ -8,9 +8,9 @@ package controller;
 import Model.Aplikasi;
 import Model.Petugas;
 import Model.Barang;
-import ViewGUI.Gudang;
+import ViewGUI.Viewgudang;
 import ViewGUI.MenuUtama;
-import ViewGUI.Penyedia;
+import ViewGUI.Viewenyedia;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,22 +22,22 @@ public class ControllerHomepage implements ActionListener {
 
     private MenuUtama gui;
     private Aplikasi model;
-    private ViewGUI.Petugas view;
-    private Penyedia view1;
+    private ViewGUI.Viewpetugas view;
+    private Viewenyedia view1;
     private Barang view2;
-    private Gudang view3;
+    private Viewgudang view3;
 
     public ControllerHomepage() {
         this.model = model;
         gui = new MenuUtama();
-        view = new ViewGUI.Petugas();
+        view = new ViewGUI.Viewpetugas();
         view.setVisible(false);
-        view1 = new Penyedia();
+        view1 = new Viewenyedia();
         view1.setVisible(false);
-        view2 = new Barang();
-        view3 = new Gudang();
+//        view2 = new Barang();
+        view3 = new Viewgudang();
         gui.setVisible(true);
-        gui.addactionlistener(this);
+        gui.addListener(this);
 
     }
 
@@ -55,7 +55,7 @@ public class ControllerHomepage implements ActionListener {
 
         }
         if (o.equals(gui.getMbarang())) {
-            view2.setVisible(true);
+//            view2.setVisible(true);
             gui.dispose();
 
         }

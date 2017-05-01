@@ -5,9 +5,15 @@
  */
 package ViewGUI;
 
+import Model.Barang;
+import Model.Gudang;
+import Model.Penyedia;
+import Model.Petugas;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,12 +24,34 @@ public class Showpenyedia_penyedia extends javax.swing.JFrame {
     /**
      * Creates new form Showpenyedia_penyedia
      */
-    public Showpenyedia_penyedia() {
+    public void Showpenyedia_penyedia() {
         initComponents();
+        setHeader();
     }
 
     public void ActionListener(ActionListener e) {
         b_pypy.addActionListener(e);
+    }
+    
+    public void setHeader(){
+        String[] header = {"Nama","Alamat","ID Penyedia","No Hp"};
+        DefaultTableModel model = new DefaultTableModel (null,header);
+        Ppenyedia.setModel(model);
+    }
+    
+     public void inputData(ArrayList<Penyedia> listPpenyedia) {
+        DefaultTableModel model = (DefaultTableModel) Ppenyedia.getModel();
+        for (int i = 0; i < listPpenyedia.size(); i++) {
+            for (Barang daftarBarang : listPpenyedia.get(i).getDaftarBarang()) {
+                model.addRow(new String[] {listPpenyedia.get(i).getNama(),
+                    listPpenyedia.get(i).getAlamat(),
+                    listPpenyedia.get(i).getIdPenyedia(),
+                    listPpenyedia.get(i).getNoHP(),
+                });
+            }
+            
+            
+        }
     }
 
     public JButton getB_pypy() {
@@ -33,7 +61,6 @@ public class Showpenyedia_penyedia extends javax.swing.JFrame {
     public void setB_pypy(JButton b_pypy) {
         this.b_pypy = b_pypy;
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,23 +72,23 @@ public class Showpenyedia_penyedia extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Ppenyedia = new javax.swing.JTable();
         b_pypy = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Ppenyedia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Ppenyedia);
 
         b_pypy.setText("Back");
 
@@ -141,9 +168,9 @@ public class Showpenyedia_penyedia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Ppenyedia;
     private javax.swing.JButton b_pypy;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

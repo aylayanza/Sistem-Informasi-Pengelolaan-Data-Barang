@@ -12,24 +12,25 @@ import java.util.ArrayList;
  *
  * @author Farid Kiftirul Aziz
  */
-public class Barang implements Serializable{
+public class Barang implements Serializable {
+
     private String NamaBarang;
     private final String ID_Barang;
     private int stokBarang;
     private String tanggal_pembelian;
     private double hargaBarang;
     private ArrayList<Gudang> daftarGudang;
+    private static int countBr = 1;
 
-    public Barang(String NamaBarang, String ID_Barang, int stokBarang, String tanggal_pembelian, double hargaBarang) {
+    public Barang(String NamaBarang, int stokBarang, String tanggal_pembelian, double hargaBarang) {
         this.NamaBarang = NamaBarang;
-        this.ID_Barang = ID_Barang;
         this.stokBarang = stokBarang;
         this.tanggal_pembelian = tanggal_pembelian;
         this.hargaBarang = hargaBarang;
-//        this.daftarGudang = daftarGudang;
+        ID_Barang = "B-" + (countBr++);
+        this.daftarGudang = daftarGudang;
     }
-    
-   
+
     public String getNamaBarang() {
         return NamaBarang;
     }
@@ -42,11 +43,9 @@ public class Barang implements Serializable{
         return ID_Barang;
     }
 
-
 //    public void setID_Barang(String ID_Barang) {
 //        this.ID_Barang = ID_Barang;
 //    }
-
     public int getStokBarang() {
         return stokBarang;
     }
@@ -70,20 +69,36 @@ public class Barang implements Serializable{
     public void setHargaBarang(double hargaBarang) {
         this.hargaBarang = hargaBarang;
     }
-    
-        @Override
+
+    @Override
     public String toString() {
-        String s = "Nama Barang : "+ NamaBarang + "\n"
-                +"Id Barang : "+ID_Barang+"\n"
-                +"Stok Barang : "+ stokBarang+"\n"
-                +"Tanggal Pembelian : "+tanggal_pembelian+"\n"
-                +"Harga Barang : "+hargaBarang;
-        return  s;
+        String s = "Nama Barang : " + NamaBarang + "\n"
+                + "Id Barang : " + ID_Barang + "\n"
+                + "Stok Barang : " + stokBarang + "\n"
+                + "Tanggal Pembelian : " + tanggal_pembelian + "\n"
+                + "Harga Barang : " + hargaBarang;
+        return s;
     }
-    
-    public String toStringAll(){
-        return ID_Barang + "," + getNamaBarang() + "," + getStokBarang() + "," + getTanggal_pembelian()+ "," + hargaBarang;
+
+    public String toStringAll() {
+        return ID_Barang + "," + getNamaBarang() + "," + getStokBarang() + "," + getTanggal_pembelian() + "," + hargaBarang;
     }
-    
-   
+
+    public ArrayList<Gudang> getDaftarGudang() {
+        return daftarGudang;
+    }
+
+    public void setDaftarGudang(ArrayList<Gudang> daftarGudang) {
+        this.daftarGudang = daftarGudang;
+    }
+
+    public Barang(String ID_Barang, ArrayList<Gudang> daftarGudang) {
+        this.ID_Barang = ID_Barang;
+        this.daftarGudang = daftarGudang;
+    }
+
+
+
 }
+
+

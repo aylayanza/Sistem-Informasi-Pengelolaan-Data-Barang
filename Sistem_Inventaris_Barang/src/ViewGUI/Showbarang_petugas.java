@@ -5,9 +5,12 @@
  */
 package ViewGUI;
 
+import Model.Petugas;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,13 +21,33 @@ public class Showbarang_petugas extends javax.swing.JFrame {
     /**
      * Creates new form Showbarang_petugas
      */
-    public Showbarang_petugas() {
+    public void Showbarang_petugas() {
         initComponents();
+        setHeader();
     }
 
     public void ActionListener(ActionListener e) {
         b_sbpt.addActionListener(e);
         r_sbpt.addActionListener(e);
+    }
+
+    public void setHeader() {
+        String[] header = {"Nama Petugas", "ID Petugas", "Alamat", "No.Hp"};
+        DefaultTableModel model = new DefaultTableModel(null, header);
+        Bpetugas.setModel(model);
+    }
+
+    public void inputData(ArrayList<Petugas> listBpetugas) {
+        DefaultTableModel model = (DefaultTableModel) Bpetugas.getModel();
+        for (int i = 0; i < listBpetugas.size(); i++) {
+            for (Petugas listBpetuga : listBpetugas) {
+                model.addRow(new String[]{listBpetugas.get(i).getNama() + "",
+                    listBpetugas.get(i).getIdPetugas() + "",
+                    listBpetugas.get(i).getAlamat(),
+                    listBpetugas.get(i).getNoHP(),});
+            }
+
+        }
     }
 
     public JButton getB_sbpt() {
@@ -54,24 +77,24 @@ public class Showbarang_petugas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Bpetugas = new javax.swing.JTable();
         r_sbpt = new javax.swing.JButton();
         b_sbpt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Bpetugas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Bpetugas);
 
         r_sbpt.setText("Remove");
 
@@ -156,10 +179,10 @@ public class Showbarang_petugas extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(this, errMsg);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Bpetugas;
     private javax.swing.JButton b_sbpt;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton r_sbpt;
     // End of variables declaration//GEN-END:variables
 }

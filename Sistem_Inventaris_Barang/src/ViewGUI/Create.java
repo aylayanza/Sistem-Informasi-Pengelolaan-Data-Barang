@@ -23,7 +23,7 @@ public class Create extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void ActionListener(ActionListener e) {
+    public void addListener(ActionListener e) {
         C_password.addActionListener(e);
         C_username.addActionListener(e);
         Create.addActionListener(e);

@@ -13,52 +13,44 @@ import javax.swing.JOptionPane;
  *
  * @author Farid Kiftirul Aziz
  */
-public class Penyedia extends javax.swing.JFrame {
+public class Viewpetugas extends javax.swing.JFrame {
 
     /**
-     * Creates new form Penyedia
+     * Creates new form Petugas
      */
-    public Penyedia() {
+    public Viewpetugas() {
         initComponents();
     }
 
-    public void ActionListener(ActionListener e) {
-        bpy.addActionListener(e);
-        p_sb.addActionListener(e);
-        p_addp.addActionListener(e);
-        p_addb.addActionListener(e);
+    public void addListener(ActionListener e) {
+        Add_bpt.addActionListener(e);
+        b_pt.addActionListener(e);
+        shb_pt.addActionListener(e);
+
     }
 
-    public JButton getBpy() {
-        return bpy;
+    public JButton getAdd_bpt() {
+        return Add_bpt;
     }
 
-    public void setBpy(JButton bpy) {
-        this.bpy = bpy;
+    public void setAdd_bpt(JButton Add_bpt) {
+        this.Add_bpt = Add_bpt;
     }
 
-    public JButton getP_addb() {
-        return p_addb;
+    public JButton getB_pt() {
+        return b_pt;
     }
 
-    public void setP_addb(JButton p_addb) {
-        this.p_addb = p_addb;
+    public void setB_pt(JButton b_pt) {
+        this.b_pt = b_pt;
     }
 
-    public JButton getP_addp() {
-        return p_addp;
+    public JButton getShb_pt() {
+        return shb_pt;
     }
 
-    public void setP_addp(JButton p_addp) {
-        this.p_addp = p_addp;
-    }
-
-    public JButton getP_sb() {
-        return p_sb;
-    }
-
-    public void setP_sb(JButton p_sb) {
-        this.p_sb = p_sb;
+    public void setShb_pt(JButton shb_pt) {
+        this.shb_pt = shb_pt;
     }
 
     /**
@@ -72,74 +64,75 @@ public class Penyedia extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        p_addb = new javax.swing.JButton();
-        p_addp = new javax.swing.JButton();
-        p_sb = new javax.swing.JButton();
-        bpy = new javax.swing.JButton();
+        Add_bpt = new javax.swing.JButton();
+        shb_pt = new javax.swing.JButton();
+        b_pt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("PENYEDIA");
+        jLabel1.setText("PETUGAS");
 
-        p_addb.setText("ADD BARANG");
+        Add_bpt.setText("ADD BARANG ");
+        Add_bpt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Add_bptActionPerformed(evt);
+            }
+        });
 
-        p_addp.setText("ADD PENYEDIA");
+        shb_pt.setText("SHOW BARANG");
 
-        p_sb.setText("SHOW BARANG");
-
-        bpy.setText("Back");
+        b_pt.setText("Back");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(p_sb)
-                            .addComponent(p_addp, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(p_addb, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(57, 57, 57))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(bpy)
-                        .addContainerGap())))
+                .addGap(86, 86, 86)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(shb_pt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Add_bpt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel1)))
+                .addContainerGap(88, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(b_pt)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(p_addb)
+                .addGap(18, 18, 18)
+                .addComponent(Add_bpt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p_addp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p_sb)
+                .addComponent(shb_pt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(bpy))
+                .addComponent(b_pt)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 21, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Add_bptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_bptActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Add_bptActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -158,33 +151,31 @@ public class Penyedia extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Penyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Petugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Penyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Petugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Penyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Petugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Penyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Petugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new Penyedia().setVisible(true);
+//                new Petugas().setVisible(true);
 //            }
 //        });
+//    }
     public void ViewErrorMsg(String errMsg) {
         JOptionPane.showConfirmDialog(this, errMsg);
     }
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bpy;
+    private javax.swing.JButton Add_bpt;
+    private javax.swing.JButton b_pt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton p_addb;
-    private javax.swing.JButton p_addp;
-    private javax.swing.JButton p_sb;
+    private javax.swing.JButton shb_pt;
     // End of variables declaration//GEN-END:variables
 }

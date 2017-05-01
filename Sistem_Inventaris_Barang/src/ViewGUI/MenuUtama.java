@@ -187,7 +187,7 @@ public class MenuUtama extends javax.swing.JFrame {
         this.Mpenyedia = Mpenyedia;
     }
 
-    public void addactionlistener(ActionListener e) {
+    public void addListener(ActionListener e) {
         MPetugas.addActionListener(e);
         Mbarang.addActionListener(e);
         Mgudang.addActionListener(e);

@@ -18,11 +18,13 @@ public class Petugas extends Orang implements Serializable {
 
     private final String idPetugas;
 
-    public Petugas(String nama, String alamat, int noHP) {
+    public Petugas(String nama, String alamat,String noHp) {
         super(nama, alamat);
         idPetugas = "P-" + (countP++);
-
+        setNoHP(noHp);
     }
+
+    
 
     public String getIdPetugas() {
         return idPetugas;
@@ -41,6 +43,7 @@ public class Petugas extends Orang implements Serializable {
         super.noHP = noHP;
     }
 
+    
     @Override
     public String toString() {
         String s = "Id Petugas : " + idPetugas;

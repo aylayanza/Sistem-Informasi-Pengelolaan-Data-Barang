@@ -18,10 +18,13 @@ public class Penyedia extends Orang implements Serializable{
     private final String idPenyedia;
     private ArrayList<Barang> daftarBarang;
     private int jmlBarang;
+    private static int countPn = 1;
 
-    public Penyedia(String nama, String alamat, String idPenyedia, int noHP) {
+    public Penyedia(String nama, String alamat, String noHP) {
         super(nama, alamat);
-        this.idPenyedia = idPenyedia;
+        idPenyedia = "PNY-" + (countPn++);
+        setNoHP(noHP);
+        
     }
 
     public String getIdPenyedia() {
@@ -32,6 +35,11 @@ public class Penyedia extends Orang implements Serializable{
 //        this.idPenyedia = idPenyedia;
 //    }
 
+    public ArrayList<Barang> getDaftarBarang() {
+        return daftarBarang;
+    }
+    
+
     public int getJmlBarang() {
         return jmlBarang;
     }
@@ -40,8 +48,8 @@ public class Penyedia extends Orang implements Serializable{
         this.jmlBarang = jmlBarang;
     }
 
-    public void createBarang(String nama, String idBarang, int jmlBarang, String tgl, double harga) {
-        Barang b = new Barang(nama, idBarang, jmlBarang, tgl, harga);
+    public void createBarang(String nama, int jmlBarang, String tgl, double harga) {
+        Barang b = new Barang(nama, jmlBarang, tgl, harga);
         daftarBarang.add(b);
     }
 
