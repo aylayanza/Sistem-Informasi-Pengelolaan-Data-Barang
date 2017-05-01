@@ -19,6 +19,6 @@ public class Driver {
 //        
         Console view = new Console(app);
         view.mainMenu();
-//        new ControllerHomepage();
+        new ControllerHomepage();
     }
 }
